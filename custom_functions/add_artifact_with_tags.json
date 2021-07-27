@@ -1,0 +1,89 @@
+{
+    "create_time": "2021-03-20T01:47:18.400157+00:00",
+    "custom_function_id": "35dc7bbc5dddce50dc3418bc4e90ef17f032b903",
+    "description": "Adds an artifact and updates that artifact with provided tags",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "cef",
+            "placeholder": "artifact.cef"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "tags",
+            "placeholder": "artifact.tags"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "severity",
+            "placeholder": "\"informational\""
+        },
+        {
+            "contains_type": [
+                "phantom container id"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "container_id",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "label",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "name",
+            "placeholder": "artifact.name"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Defaults to False",
+            "input_type": "item",
+            "name": "run_automation",
+            "placeholder": "True or False"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "valid field_mapping json",
+            "input_type": "item",
+            "name": "field_mapping",
+            "placeholder": "{\"my_cef_field\": [\"hash\"]}"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "id",
+            "description": ""
+        }
+    ],
+    "platform_version": "10155.0.0.46705",
+    "python_version": "3"
+}

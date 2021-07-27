@@ -1,0 +1,107 @@
+{
+    "create_time": "2021-03-20T01:47:33.394862+00:00",
+    "custom_function_id": "f6dcf9b0ae3d1b637d56c394a1e1fa0ab00b82bc",
+    "description": "Custom function implementation of re.find_all. Takes an input_string and a regex_pattern and returns matches (up to 8).",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "A string to run regex against",
+            "input_type": "item",
+            "name": "input_string",
+            "placeholder": "text"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Regex pattern goes here",
+            "input_type": "item",
+            "name": "input_pattern",
+            "placeholder": "[rR][eE][gG][eE][xX]+"
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "item",
+            "name": "artifact_id",
+            "placeholder": "artifact:id"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "all",
+            "description": "Entire result of re.findall"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group1",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group2",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group3",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group4",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group5",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group6",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group7",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "group8",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "artifact_id",
+            "description": ""
+        }
+    ],
+    "platform_version": "10155.0.0.46705",
+    "python_version": "3"
+}

@@ -1,0 +1,44 @@
+{
+    "create_time": "2021-03-20T01:47:31.526597+00:00",
+    "custom_function_id": "b7585dcc1784a315a0285965f7e89bbffc6bd4a8",
+    "description": "Detects -enc flag and extracts base64. Based on Unit42 research.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "A powershell cmdline that may contain encoding flag",
+            "input_type": "item",
+            "name": "input_string",
+            "placeholder": "powershell.exe  -enc <base64>"
+        },
+        {
+            "contains_type": [
+                "phantom artifact id"
+            ],
+            "description": "Phantom Artifact ID",
+            "input_type": "item",
+            "name": "artifact_id",
+            "placeholder": "123"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "extracted_string",
+            "description": "Base 64 extracted from input_string. Empty if extraction failed."
+        },
+        {
+            "contains_type": [
+                "phantom artifact id"
+            ],
+            "data_path": "artifact_id",
+            "description": "Phantom Artifact ID"
+        }
+    ],
+    "platform_version": "10155.0.0.46705",
+    "python_version": "3"
+}

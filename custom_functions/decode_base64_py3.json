@@ -1,0 +1,44 @@
+{
+    "create_time": "2021-03-20T01:47:19.890546+00:00",
+    "custom_function_id": "58377e67be0f098dd82738b2be3e9427ab60a830",
+    "description": "Decodes provided base64 string",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Base64 encoded text",
+            "input_type": "item",
+            "name": "input_string",
+            "placeholder": "base64_text"
+        },
+        {
+            "contains_type": [
+                "phantom artifact id"
+            ],
+            "description": "Phantom Artifact ID",
+            "input_type": "item",
+            "name": "artifact_id",
+            "placeholder": "123"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "decoded_string",
+            "description": "Base64 decoded string"
+        },
+        {
+            "contains_type": [
+                "phantom artifact id"
+            ],
+            "data_path": "artifact_id",
+            "description": "Phantom Artifact ID"
+        }
+    ],
+    "platform_version": "10155.0.0.46705",
+    "python_version": "3"
+}

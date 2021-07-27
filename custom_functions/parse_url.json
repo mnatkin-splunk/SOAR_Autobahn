@@ -1,0 +1,48 @@
+{
+    "create_time": "2021-03-20T01:47:28.029374+00:00",
+    "custom_function_id": "09e83783e79d1e4a33fb96c29d4e5ca0c802a05f",
+    "description": "",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "item",
+            "name": "url",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "domain"
+            ],
+            "data_path": "domain",
+            "description": ""
+        },
+        {
+            "contains_type": [],
+            "data_path": "path",
+            "description": ""
+        },
+        {
+            "contains_type": [],
+            "data_path": "params",
+            "description": ""
+        },
+        {
+            "contains_type": [],
+            "data_path": "scheme",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "url"
+            ],
+            "data_path": "url",
+            "description": ""
+        }
+    ],
+    "platform_version": "10155.0.0.46705",
+    "python_version": "3"
+}

@@ -1,0 +1,32 @@
+{
+    "create_time": "2021-01-24T05:47:24.501984+00:00",
+    "custom_function_id": "98d872e689ce2868c2a9b4bf4f2b954054e3efa5",
+    "description": "Checks if phantom APIs are usable.",
+    "draft_mode": false,
+    "inputs": [],
+    "outputs": [
+        {
+            "contains_type": [
+                "int"
+            ],
+            "data_path": "status",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "int"
+            ],
+            "data_path": "success",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "int"
+            ],
+            "data_path": "fail",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.10.1.44036",
+    "python_version": "3"
+}

@@ -1,0 +1,32 @@
+{
+    "create_time": "2021-01-24T05:47:43.924438+00:00",
+    "custom_function_id": "8cd72e214587741f8b101269d0c8cd1011573595",
+    "description": "Checks if certain Phantom APIs are callable.",
+    "draft_mode": false,
+    "inputs": [],
+    "outputs": [
+        {
+            "contains_type": [
+                "int"
+            ],
+            "data_path": "status",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "int"
+            ],
+            "data_path": "success",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "int"
+            ],
+            "data_path": "fail",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.10.1.44036",
+    "python_version": "3"
+}
