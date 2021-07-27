@@ -1,0 +1,36 @@
+name: SANS PICERL incident process
+id: 8a7ea67a-dd53-468e-aeef-b75aed0a877c
+description: The SANS incident response process has several phases. SANS PICERL incident process describes the six major phases of the incident response processes that are `preparation`, `identification`, `containment`, `eradication`, `recovery`, and `lessons learned` with the activities in detail. This process is used to build effective incident response plans.  This particular response template aligns to the NIST 800-61r2 model (preparation, detection and analysis, containment, eradication, recovery, and post-incident) format produced by SANS Cybersecurity Training Organization.
+is_note_required: false
+tags:
+  - PICERL
+  - SOAR
+  analytics_story: all
+  nist: RS.RP
+references:
+  - "https://www.sans.org/reading-room/whitepapers/incident/incident-handlers-handbook-33901"
+response_phase:
+  - preparation:
+      - id: d360707d-9214-4449-b15d-9d3cf134209a
+        name: preparation
+  - identification:
+      - id: 6cdd56ba-5ffd-46a9-9dde-d25ce755c100
+        name: identification
+  - containment:
+      - id: 5d790fae-8ba6-4fc9-b288-78b67ef8370c
+        name: containment
+  - eradication:
+      - id: d3b80e0e-4e85-4259-a13c-69ef20987e1c
+        name: eradication
+  - recovery:
+      - id: cae4dcdb-f81b-45ec-b0d6-a00cec468e9a
+        name: recovery
+  - lessons_learned:
+      - id: 001209bc-2f94-4dc7-b21e-9598c41eaa80
+        name: lessons learned
+how_to_implement: Organizations should use this workbook as a template to assist in the defination of the procedure and outline the processes for their security operations teams.
+Preparation in this workbook defines the tasks that should be done prior to instituting a response process and should not be imported into response tools that support ingestion. 
+Preparation is here purely for assisting with the necessary items needed prior to instituting a response process properly
+version: 3
+date: '2021-03-05'
+author: Rob Gresham, Splunk

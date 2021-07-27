@@ -1,0 +1,12 @@
+{
+"configuration": {
+	"base_url": "https://$$$PH_SERVER_NAME$$/rest",
+	"test_path": "/container?_filter_status=1",
+	"auth_token": "$$$PH_AUTH_TOKEN$$$"
+},
+"description": "",
+"disabled": false,
+"name": "phantom app",
+"product_name": "HTTP",
+"product_vendor": "Generic"
+}

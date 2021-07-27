@@ -1,0 +1,14 @@
+{
+    "description": "",
+    "type": "sandbox",
+    "product_name": "Thret Grid Demo",
+    "configuration": {
+        "base_uri": "https://panacea.threatgrid.com",
+        "_reserved_environment_variables": {},
+        "api_key": "511CPRqkjveKS+HSjggEwQ==",
+        "verify_server_cert": true,
+        "timeout": 600
+    },
+    "product_vendor": "Threat Grid",
+    "name": "threatgrid"
+}

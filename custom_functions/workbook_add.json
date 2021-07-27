@@ -1,0 +1,36 @@
+{
+    "create_time": "2021-05-19T13:31:21.869620+00:00",
+    "custom_function_id": "5eaa596a5f8e0dc992dc5ac83e9c5382232c0c15",
+    "description": "Add a workbook to a container. Provide a container id and a workbook name or id",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "phantom container id"
+            ],
+            "description": "A phantom container id",
+            "input_type": "item",
+            "name": "container",
+            "placeholder": "container:id"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "A workbook name or id",
+            "input_type": "item",
+            "name": "workbook",
+            "placeholder": "my_workbook"
+        },
+        {
+            "contains_type": [],
+            "description": "Check to see if workbook already exists in container before adding.",
+            "input_type": "item",
+            "name": "check_for_existing_workbook",
+            "placeholder": "True or False"
+        }
+    ],
+    "outputs": [],
+    "platform_version": "4.10.2.47587",
+    "python_version": "3"
+}

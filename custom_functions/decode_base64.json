@@ -1,0 +1,45 @@
+{
+    "create_time": "2021-04-05T23:38:54.525320+00:00",
+    "custom_function_id": "b7e63dc620449d4b3a49578612165479869ec0cb",
+    "description": "Attempts to find and decode a base64 string. This will error out if the string is not valid.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "An input string or artifact path",
+            "input_type": "item",
+            "name": "input_string",
+            "placeholder": "My base 64 string"
+        },
+        {
+            "contains_type": [],
+            "description": "Decide to split the input",
+            "input_type": "item",
+            "name": "split_input",
+            "placeholder": "True or False"
+        },
+        {
+            "contains_type": [],
+            "description": "Character to split by. Only applies if split_input is set to True. If blank, defaults to space. Use character name, e.g. 'space', 'colon', 'comma' or the actual character.",
+            "input_type": "item",
+            "name": "split_character",
+            "placeholder": "space"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "decoded_b64.*.value",
+            "description": "Base64 decoded string only"
+        },
+        {
+            "contains_type": [],
+            "data_path": "original_string",
+            "description": "Passthrough of the string that was entered as input_string"
+        }
+    ],
+    "platform_version": "4.10.2.47587",
+    "python_version": "3"
+}

@@ -1,0 +1,70 @@
+{
+    "create_time": "2021-03-12T18:53:26.914081+00:00",
+    "custom_function_id": "0140ac4c2ffa4a0d33dbd29e4dfb3240df8a90a7",
+    "description": "List available Playbooks by Name, Category and Tags",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [],
+            "description": "Playbook Name",
+            "input_type": "item",
+            "name": "name",
+            "placeholder": "Playbook Name"
+        },
+        {
+            "contains_type": [],
+            "description": "Playbook Category",
+            "input_type": "item",
+            "name": "category",
+            "placeholder": "Playbook Category"
+        },
+        {
+            "contains_type": [],
+            "description": "Comma separated list of tags",
+            "input_type": "item",
+            "name": "tags",
+            "placeholder": "tag1,tag2,tag3"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                ""
+            ],
+            "data_path": "*.id",
+            "description": "Playbook ID:\ne.g. 1234"
+        },
+        {
+            "contains_type": [],
+            "data_path": "*.full_name",
+            "description": "Playbook full name with repo, e.g.:\nlocal/playbook_name"
+        },
+        {
+            "contains_type": [],
+            "data_path": "*.name",
+            "description": "Playbook Name:\ne.g. My Playbook"
+        },
+        {
+            "contains_type": [],
+            "data_path": "*.category",
+            "description": "Playbook category:\ne.g. Uncategorized"
+        },
+        {
+            "contains_type": [],
+            "data_path": "*.tags",
+            "description": "List of tags:\ne.g. [ tag1, tag2, tag3 ]"
+        },
+        {
+            "contains_type": [],
+            "data_path": "*.active",
+            "description": "Playbook automation status:\ne.g. True or False"
+        },
+        {
+            "contains_type": [],
+            "data_path": "*.disabled",
+            "description": "Playbook enabled / disabled status:\ne.g. True or False"
+        }
+    ],
+    "platform_version": "4.10.2.47587",
+    "python_version": "3"
+}

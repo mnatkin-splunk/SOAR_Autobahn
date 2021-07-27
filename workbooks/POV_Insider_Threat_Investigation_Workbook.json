@@ -1,0 +1,444 @@
+{
+    "name": "POV_Insider_Threat_Investigation_Workbook",
+    "description": "Use this workbook when suspected inappropriate, illegal or employee policy violation has been identified as part of detection and event triage. This workbook should be augmented with further tasks and workbooks when needed to mirror your organisation's process for investigating employees, and responding to compliance exception events.",
+    "status": "published",
+    "is_default": false,
+    "is_note_required": true,
+    "phases": [
+        {
+            "id": "new-phase1",
+            "name": "Identification",
+            "order": 1,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task1",
+                    "name": "Accept Event and Assign Owner",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "Accept event and assign the owner to the event and the first task.",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Accept_Event"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task2",
+                    "name": "Add User Context",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "Lookup the user, to discover contexts such as job role, group memberships, business unit, email, manager, phone #, location and workstation name",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_AddContext_LDAP"
+                            }
+                        ],
+                    
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task3",
+                    "name": "Behaviour - Investigate System Access",
+                    "order": 3,
+                    "owner": null,
+                    "role": null,
+                    "description": "Has this employee accessed any new systems recently, or logged in at unusual times of the day. Contrast system access with any recent job role changes, and empirical information from the employee's management team that may legitimise any unusual activity.",
+                    "actions": [
+                            "run query",
+                            "send email",
+                            "create ticket"
+                        ],
+                        "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_SIEM_Context_Authentication_By_sourceUserName"
+                            }
+                    ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task4",
+                    "name": "Behaviour - Investigate Increased Authorisation Requests",
+                    "order": 4,
+                    "owner": null,
+                    "role": null,
+                    "description": "Are there any recent requests to increase authorisation levels to specific systems or data?",
+                    "actions": [
+                            "run query",
+                            "create ticket",
+                            "send email"
+                        ],
+                        "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_SIEM_Context_Authorisation_By_User"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task5",
+                    "name": "Behaviour - Investigate Physical Movement",
+                    "order": 5,
+                    "owner": null,
+                    "role": null,
+                    "description": "Is there evidence of unusual physical movement, either into areas not normally seen or at times of the day that are out of the ordinary?\n\nInvestigate with Physical Security, or investigate Badge Access Logs",
+                    "actions": [
+                            "send email",
+                            "create ticket"
+                    ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task6",
+                    "name": "Network-Indicators - Investigate Email Activity",
+                    "order": 6,
+                    "owner": null,
+                    "role": null,
+                    "description": "Is there any evidence to suggest data exfiltration by email. Common signs are large file attachments, emails to competitors, emails to personal email domains.",
+                    "actions": [
+                            "run query",
+                            "send email",
+                            "create ticket"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task7",
+                    "name": "Client-Side - Investigate Mass Storage Usage",
+                    "order": 7,
+                    "owner": null,
+                    "role": null,
+                    "description": "Is there any evidence to suggest data exfiltration by connecting USB mass storage devices?",
+                    "actions": [
+                            "run query",
+                            "run script",
+                            "create ticket",
+                            "send email"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task8",
+                    "name": "Client-Side - Investigate Cloud Storage Usage",
+                    "order": 8,
+                    "owner": null,
+                    "role": null,
+                    "description": "Is there any evidence to suggest data exfiltration to cloud storage providers, such as Dropbox, OneDrive,  AWS S3, GitHub",
+                    "actions": [
+                            "send email",
+                            "create ticket",
+                            "run query"
+                    ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task9",
+                    "name": "Network-Indicators - Web Activity",
+                    "order": 9,
+                    "owner": null,
+                    "role": null,
+                    "description": "Is there any evidence of Data Exfiltration or activity with competitors. Large data transfers, long sessions, connectivity with VPN providers or underground web should all be considered.",
+                    "actions": [
+                            "create ticket",
+                            "send email",
+                            "run query"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task10",
+                    "name": "Network-Indicators - Instant Messaging",
+                    "order": 10,
+                    "owner": null,
+                    "role": null,
+                    "description": "Review instant messaging logs and file uploads to look for signs of data exfiltration",
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task11",
+                    "name": "Network-Indicators - Print Activity",
+                    "order": 11,
+                    "owner": null,
+                    "role": null,
+                    "description": "Is there any evidence of data exfiltration using printers. Review the event logs.",
+                    "actions": [
+                            "run query",
+                            "send email",
+                            "create ticket"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task12",
+                    "name": "Make a Determination",
+                    "order": 12,
+                    "owner": null,
+                    "role": null,
+                    "description": "Has there been inappropriate employee behaviour, a policy violation or potentially illegal activity? If so, tag the event 'illegal_activty', 'policy_violation', 'inappropriate_behaviour'.\n\nInclude new workbooks to add tasks for each scenario if appropriate",
+                    "actions": [
+                            "add tag",
+                            "update artifact tags"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task13",
+                    "name": "Determined Regulatory and Compliance",
+                    "order": 13,
+                    "owner": null,
+                    "role": null,
+                    "description": "Make a determination on whether there are compliance and/or regulatory implications such as personally identifiable information (PII), HIPPA or others may be impacted. If so tag the event with the appropriate standard. \n\nInclude new workbooks to add tasks for each scenario if appropriate.",
+                    "actions": [
+                            "add tag"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase2",
+            "name": "Containment",
+            "order": 2,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task14",
+                    "name": "Escalate to Stakeholders",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "Escalate the incident to Human Resources and the employee's immediate manager to gain approval for increased monitoring.",
+                    "actions": [
+                            "send email",
+                            "create ticket"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task15",
+                    "name": "Increase Audit Logging for the Employees Activities",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "Increase the levels of auditing on the employee's host, and any associated usernames in line with your companies audit policy.",
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task16",
+                    "name": "Begin Live Incident Response",
+                    "order": 3,
+                    "owner": null,
+                    "role": null,
+                    "description": "If appropriate begin Incident Response data collection from the employee's device.",
+                    "actions": [
+                            "run script",
+                            "send email",
+                            "create ticket"
+                    ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task17",
+                    "name": "Add the Employee to the SIEM watchlist",
+                    "order": 4,
+                    "owner": null,
+                    "role": null,
+                    "description": "Add the Employee username(s) to the watchlist.",
+                    "actions": [
+                            "run query"
+                    ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task18",
+                    "name": "Block Access to the Employees AD Account",
+                    "order": 5,
+                    "owner": null,
+                    "role": null,
+                    "description": "Remove access to the user's account",
+                    "actions": [
+                            "disable user"
+                        ],
+                        "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Disable_AD_Account"
+                            }
+                    ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task19",
+                    "name": "Remove External Access",
+                    "order": 6,
+                    "owner": null,
+                    "role": null,
+                    "description": "Remove access to VPN and other sources of external access.",
+                    "actions": [
+                            "disable user",
+                            "send email",
+                            "create ticket"
+                    ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase3",
+            "name": "Remediation",
+            "order": 3,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task20",
+                    "name": "Collect Forensically Sound Image",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "If appropriate obtain a forensically sound image.",
+                    "actions": [
+                            "create ticket",
+                            "send email"
+                    ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task21",
+                    "name": "Check for Residual Tools",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "If appropriate conduct an investigation to into the employee's host or network devices to check for tools that may have been left behind. Trojans and backdoors, logic bombs etc are commonplace, especially 'IT sabotage' motivated attacks are in play.",
+                    "actions": [
+                            "create ticket",
+                            "send email"
+                    ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task22",
+                    "name": "Reduce Auditing Levels",
+                    "order": 3,
+                    "owner": null,
+                    "role": null,
+                    "description": "Once the threat has been removed, return the environment back to its previous state by reducing the audit level to the standard audit policy.",
+                    "actions": [
+                            "send email",
+                            "create ticket"
+                    ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task23",
+                    "name": "Remove Watchliste",
+                    "order": 4,
+                    "owner": null,
+                    "role": null,
+                    "description": "Once the threat has been removed, remove the employee's username(s) from the SIEM watchlist",
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase4",
+            "name": "Lessons Learnt",
+            "order": 4,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task24",
+                    "name": "Develop Incident Report",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "It is recommended to develop an incident report to share with the stakeholders, and if appropriate meet any regulatory and compliance commitments.",
+                    "actions": [
+                            "send email"
+                    ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task25",
+                    "name": "Conduct Lessons Learnt Exercise",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "Review the incident report with all stakeholders and make suggestions for policy changes, security awareness training etc.",
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task26",
+                    "name": "Close Incident",
+                    "order": 3,
+                    "owner": null,
+                    "role": null,
+                    "description": "",
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        }
+    ]
+}

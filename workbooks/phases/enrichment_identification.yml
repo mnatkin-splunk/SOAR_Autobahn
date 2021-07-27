@@ -1,0 +1,18 @@
+name: Enrichment indentification
+id: 0534dee5-5682-4fb1-ab14-6d8b8c619bc2
+sla_type: minutes
+sla:
+description: This phase is about getting the necessary enrichment automation and providing a Threat Intelligence evaluation of the currated intelligence, reputation and any other requested additional information sources.
+references:
+  - NIST Special Publication 800-61r2 3.2 Detection and Analysis
+  - "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf"
+response_task:
+  - name: accept_and_assign_event
+    id: 667b8d15-2564-4994-929d-bda2532341bf
+  - name: validate_customer_and_host_enrichment
+    id: 40d2f4c2-d6d4-4e09-b69d-a9bf44ceba09
+  - name: indicator_analysis
+    id: 9bfbaa5f-b2ab-4ff5-acaf-cdd8105d6b92
+version: 2
+date: '2021-02-06'
+author: Rob Gresham, Splunk

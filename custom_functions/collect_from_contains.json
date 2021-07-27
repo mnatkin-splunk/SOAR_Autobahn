@@ -1,0 +1,60 @@
+{
+    "create_time": "2021-04-30T13:22:06.306166+00:00",
+    "custom_function_id": "a32776615adc8e0e9eadfb36f9a5e55ccdde38b3",
+    "description": "Returns artifact values that match any known cef data types on this Phantom instance",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "phantom container id"
+            ],
+            "description": "Phantom container id or container object",
+            "input_type": "item",
+            "name": "container",
+            "placeholder": "container:id"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Individual cef types or a comma separated list: e.g.: hash,filehash,file_hash",
+            "input_type": "item",
+            "name": "contains",
+            "placeholder": "cef_type1,cef_type2,cef_type3"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Individual tags or a comma separated list.",
+            "input_type": "item",
+            "name": "tags",
+            "placeholder": "tag1,tag2,tag3"
+        },
+        {
+            "contains_type": [],
+            "description": "Select artifact scope to retrieve. Accepted values: all or new. Defaults to new if left blank.",
+            "input_type": "item",
+            "name": "scope",
+            "placeholder": "new"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "*.artifact_value",
+            "description": "Unpacked artifact values"
+        },
+        {
+            "contains_type": [
+                "phantom artifact id"
+            ],
+            "data_path": "*.artifact_id",
+            "description": "Phantom artifact id"
+        }
+    ],
+    "platform_version": "4.10.2.47587",
+    "python_version": "3"
+}

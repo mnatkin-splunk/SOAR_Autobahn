@@ -1,0 +1,58 @@
+{
+    "create_time": "2021-07-27T01:25:32.848166+00:00",
+    "custom_function_id": "039736bbdc1961b88bc316b31554ee1f128f6c8a",
+    "description": "Calculates the percentage of two numbers.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Numerator = Top of equation.",
+            "input_type": "item",
+            "name": "numerator",
+            "placeholder": "top number"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Denominator = the 'out of' score. ",
+            "input_type": "item",
+            "name": "denominator",
+            "placeholder": "bottom nu,ber"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "percentage_val",
+            "description": "Single Number"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "percentage_str",
+            "description": "Includes the % symbol as text string"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "status",
+            "description": "Function Status (success, failed)"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "message",
+            "description": "Any failure message"
+        }
+    ],
+    "platform_version": "4.10.3.51237",
+    "python_version": "3"
+}

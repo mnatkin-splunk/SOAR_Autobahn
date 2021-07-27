@@ -1,0 +1,20 @@
+{
+    "create_time": "2021-05-06T22:05:52.314722+00:00",
+    "custom_function_id": "233cfc9406f3e284c4714d187311ff3764434abb",
+    "description": "This custom function assigns the workbook based on the container tag presented in order of precedence. ",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                ""
+            ],
+            "description": "Add the container id to add workbook to.",
+            "input_type": "list",
+            "name": "container_id",
+            "placeholder": "container:id"
+        }
+    ],
+    "outputs": [],
+    "platform_version": "4.10.3.51237",
+    "python_version": "3"
+}

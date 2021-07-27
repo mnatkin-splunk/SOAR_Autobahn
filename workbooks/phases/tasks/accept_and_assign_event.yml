@@ -1,0 +1,44 @@
+name: Accept and assign event
+id: 667b8d15-2564-4994-929d-bda2532341bf
+tags:
+  - SOAR
+  - PICERL
+  - PHANTOM
+  asset:
+    - splunk
+    - phantom_rest_api
+  analytics_story:
+    - Response Plan
+  nist:
+    - RS.RP
+description: 1. Review event and notes on related event information
+2. Execute playbook "Process new event and assign owner"  to assign event to yourself and complete this task.
+
+`NOTE` Please be advised that SLAs assigned are started as soon as the playbook executes and task is assigned to owner.
+input:
+  - dest
+  - userId
+search:
+automation:
+  role:
+  sla_type: minutes
+  sla:
+  is_note_required: false
+  actions:
+    - post data
+  playbooks:
+    - scm: escu
+      playook: [parent] Event ingest processing
+    - scm: escu
+      playook: Indicator processing
+    - scm: escu
+      playook: Get related event information
+    - scm: escu
+      playook: Process new event and assign owner
+references:
+how_to_implement: This task is a default accept task and allows the analyst to start the response process and start the timer for mean time to detect (MTTD).  This allows measurement of analyst review and acceptance of the task at hand.  This can be superceded by assign other tasks to individuals (if the owner is coordinating processor).  The event owner can accept the event, and then retask other sub-phase and/or task to other individuals or teams.  This is considered a procedural or policy task.
+
+This playbook is a default playbook in the sense of using to perform actions like prompting for completion of a task. We reocmmend you use this playbook to assist you in creating automated workbook tasks.  There are obvious ways to consolidate code to accomplish the functions of this playbook. However, we are demonstrating `how` you can employ this and other techniques within a playobok.  Also, other `Process` playbooks use this playbook as model and being familar with the stucuture will ensure you can accomplish any automation with the workflow tasks.
+date: '2021-02-06'
+version: 2
+author: Rob Gresham

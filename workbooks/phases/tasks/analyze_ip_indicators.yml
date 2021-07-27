@@ -1,0 +1,37 @@
+name: Analyze ip indicators
+id: a194130b-f5a8-4bfe-b09f-35f58f4397d5
+tags:
+  - picerl
+  nist:
+    - RS.RP
+description: Validate indicator existence, reputation, detonation and determine confidence, threat level and if Known APT, Malware, Suspicious Undeetermined or Allowed?
+
+    1. If Splunk present, run Splunk search on each indictor and prevalence in the environment. Summarize the number of times indicator seen in the last 24 hrs, 7 days, 1 month, six months increments. Return the hosts that have used this indictor. (make an artifact for each host?)
+    2. Gather repetitional, intelligence and general information regarding indicator into a note (a note for each indicator)
+    3. Perform any additional research regarding indicators and understanding what normal behaviour is or should be by using using search engines, knowledge bases etc.
+    4. Make a determination of indicator, Known APT, Commodity, Suspicious or Not Malicious and whether to tag to block indicator
+      a. This should align to a severity change (Known APT = High, Commodity = Med, Suspicious = Low, Not Malicious = Info)
+      b. Change container and artifact severity and tag artifact & indicator(s) with blocked and determination tag
+      c. There should be some method to collect the confidence level of the indicators assessment.  Normally, this is either a number value 1-100 or follows the severity model of high, medium, low.
+automation:
+  role:
+  sla_type: minutes
+  sla:
+  is_note_required: false
+  actions:
+    - run query
+    - whois ip
+    - geolocate ip
+    - ip reputation
+    - ip intelligence
+    - hunt ip
+    - lookup ip
+  playbooks:
+    - scm:
+      playook: ""
+references:
+    - 3.2.3 Sources of Precursors and Indicators - https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
+how_to_implement:
+date: '2021-03-06'
+version: 2
+author: Rob Gresham, Splunk

@@ -1,0 +1,12 @@
+{
+    "description": "",
+    "type": "reputation",
+    "product_name": "Recorded Future Demo",
+    "configuration": {
+        "_reserved_environment_variables": {},
+        "recordedfuture_api_token": "9VThysYeVYRdnHkJthhNJw==",
+        "recordedfuture_base_url": "https://api.recordedfuture.com/v2"
+    },
+    "product_vendor": "Recorded Future, Inc",
+    "name": "recordedfuture"
+}

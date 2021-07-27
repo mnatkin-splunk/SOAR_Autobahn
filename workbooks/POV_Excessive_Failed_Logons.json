@@ -1,0 +1,177 @@
+{
+    "name": "POV_Excessive_Failed_Logons",
+    "description": "Use this workbook to conduct an initial triage on the ESCU Account Management Analytic that fires the rule ESCU - Detect Excessive Account Lockouts From Endpoint - Rule..",
+    "phases": [
+        {
+            "id": "new-phase1",
+            "name": "Investigation",
+            "order": 1,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task1",
+                    "name": "Accept Event and Assign Owner",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "Accept event and assign the owner to the event and the first task.",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Accept_Event"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task2",
+                    "name": "Gather Logon Activity from the Host",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "Gather both successful and failed login activity from the audit logs.\n\nThis playbook helps to make a determination on whether the activity is suspicious or not by, asking these questions:",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Excessive_Failed_Logons"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task3",
+                    "name": "Make a Determination",
+                    "order": 3,
+                    "owner": null,
+                    "role": null,
+                    "description": "Based on the information gathered, make a determination as to whether this is suspicious or benign. \n\nIf benign, tag the event \"benign\"\nIf suspicious tag the event \"suspicious\"",
+                    "playbooks": [],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task4",
+                    "name": "Close Splunk Notable",
+                    "order": 4,
+                    "owner": null,
+                    "role": null,
+                    "description": "If this event has been deemed to be benign, close the Splunk Notable.",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Close_Splunk_ES_Notable"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase2",
+            "name": "Containment",
+            "order": 2,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task5",
+                    "name": "Prevent Further Connectivity",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "If the source of the login attempts originates from an external (internet) address, consider blocking the IP at a firewall to prevent further noise.",
+                    "actions": [
+                            "block ip"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase3",
+            "name": "Remediation",
+            "order": 3,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task6",
+                    "name": "Reassign Benign Events to App / OS Team",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "Benign events are likely a direct cause of cached (expired) passwords, or badly behaving applications. Escalate the event to the appropriate team.",
+                    "actions": [
+                            "create ticket",
+                            "send email"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task7",
+                    "name": "Reassign Benign Events to Customer Support",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "In the scenario where this event is occurring due to a user issue, reassign the event to the customer support team who can reach out and assist the user with gaining access to enterprise resources.",
+                    "actions": [
+                            "create ticket",
+                            "send email"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase4",
+            "name": "Recover",
+            "order": 4,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task8",
+                    "name": "Tune Detection",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "If the event triggered due to an inaccurate detection, tune the rule to provide a  more accurate false positive rate to reduce excessive noise. Accuracy, whitelisting and aggregating are all candidates for tuning detections.",
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task9",
+                    "name": "Close Event",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Close_Event"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        }
+    ]
+}

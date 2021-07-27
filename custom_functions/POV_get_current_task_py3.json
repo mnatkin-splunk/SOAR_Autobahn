@@ -1,0 +1,86 @@
+{
+    "create_time": "2021-07-27T01:25:40.419809+00:00",
+    "custom_function_id": "059ad10162f65dab5263cc782b56c635e701b2a0",
+    "description": "Gets the current task in the phase, and returns the task_id, and current owner of the playbook",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "container",
+            "placeholder": "container:id"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "currentOwner",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "task_body",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "task_id",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "next_playbook",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "workflow_task_url",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "status",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "message",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "task_name",
+            "description": "Name of the Task in the workbook"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "current_playbook_name",
+            "description": "This Playbook Executing Now."
+        }
+    ],
+    "platform_version": "4.10.3.51237",
+    "python_version": "3"
+}

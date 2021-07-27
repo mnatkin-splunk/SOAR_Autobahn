@@ -1,0 +1,49 @@
+name: Validate customer and host enrichment
+id: 40d2f4c2-d6d4-4e09-b69d-a9bf44ceba09
+tags:
+  - SOAR
+  - PICERL
+  nist:
+  - RS.RP
+  - RS.AN
+description: 1. Execute the workflow playbook `Analyze user-host activity` review the notes information created.
+2. Review Related Event information by host and account of this alert. There may be additional notables for this event that were not forwarded yet to allow for additional investigative context
+3. Validate Customer and endpoint information by reviewing `Customer or System Information Report` and note with collected host and/or Customer account information as needed.  If the necessary information is not available, manually update the note as necessary.
+4. Review the account types and Primary Group ID for the overall understanding of the accounts. For more information review `understanding account types` - https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/useraccountcontrol-manipulate-account-properties and `Primary Group Ids` - https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows
+5. Create artifact manually if you find the missing account information and hostname. When completed, you may need to execute the 'Indicator Analysis - Host-Account` or the `Analyze user-host activity`
+6. When your review is completed launch the 'Process customer and hosts validation" workbook playbook to determine if you need to merge events into a case, create a case for events to merge into, OR keep this as an event.
+input:
+  - host
+  - username
+  - userid
+search:
+automation:
+  role:
+  sla_type: minutes
+  sla: 30
+  is_note_required: false
+  actions:
+    - run query
+    - get system attributes
+    - get user attributes
+    - add artifact
+    - post data
+  playbooks:
+    - scm: escu
+      playook: Indicator Analysis - Host-Account
+    - scm: escu
+      playook: Associate Host and Account Events
+    - scm: escu
+      playbook: Analyze user-host activity
+    - scm: escu
+      playbook: Process customer and hosts validation
+references:
+  - Understanding primary group ids
+  - "https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows"
+  - Understanding account types
+  - "https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/useraccountcontrol-manipulate-account-properties"
+requirements:
+how_to_implement: These playbooks need to have the assets installed and the searches should have earliest time added.
+date: '2021-02-06'
+version: 2
+author: Rob Gresham, Splunk

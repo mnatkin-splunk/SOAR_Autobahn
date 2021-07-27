@@ -1,0 +1,71 @@
+{
+    "create_time": "2021-05-19T13:32:13.719283+00:00",
+    "custom_function_id": "1b6e88218474cd014b7b5b1b5475e913fddfd589",
+    "description": "Update a workbook task by task name",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Name of a workbook task (Required)",
+            "input_type": "item",
+            "name": "task_name",
+            "placeholder": "my_task"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Note title goes here (Optional)",
+            "input_type": "item",
+            "name": "note_title",
+            "placeholder": "My Title"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Body of note goes here (Optional)",
+            "input_type": "item",
+            "name": "note_content",
+            "placeholder": "My notes"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "One of: incomplete, in progress, complete (Optional)",
+            "input_type": "item",
+            "name": "status",
+            "placeholder": "in progress"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Owner to assign task to  (Optional)",
+            "input_type": "item",
+            "name": "owner",
+            "placeholder": "username"
+        },
+        {
+            "contains_type": [
+                "phantom container id"
+            ],
+            "description": "ID of Phantom Container (Required)",
+            "input_type": "item",
+            "name": "container_id",
+            "placeholder": "container:id"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "note_id",
+            "description": "Returns note_id if a note was added"
+        }
+    ],
+    "platform_version": "4.10.2.47587",
+    "python_version": "3"
+}

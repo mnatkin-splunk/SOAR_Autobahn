@@ -1,0 +1,39 @@
+{
+    "create_time": "2021-05-19T14:15:20.910370+00:00",
+    "custom_function_id": "1d52c58a8e9e011b0a8bee3caa8d13a370d52325",
+    "description": "Parse risk results from a Splunk search Action Results \"data\" key. Adjust the key:value dictionary at the beginning to affect cim > cef translation. For IP addresses in a hostname field, this custom function will attempt to recognize and rename to a CEF field that contains IP addresses. The custom function also maps a threat_object_type to the \"field_mapping\" field of a Phantom artifact so that the \"threat_object\" has the correct contains type. Finally, it will do normalization on the _time field, add risk_message to artifact description, add splunk source to artifact name, and add any mitre_techniques to artifact_tags.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [],
+            "description": "A JSON formatted dictionary. This is expected to come from the .data key of a Splunk search result.",
+            "input_type": "list",
+            "name": "search_json",
+            "placeholder": "search_results.data"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "*.artifact.cef",
+            "description": "A CEF dictionary"
+        },
+        {
+            "contains_type": [],
+            "data_path": "*.artifact.tags",
+            "description": "A deduped list of artifact tags"
+        },
+        {
+            "contains_type": [],
+            "data_path": "*.artifact.name",
+            "description": "The name of the artifact"
+        },
+        {
+            "contains_type": [],
+            "data_path": "*.artifact.field_mapping",
+            "description": "The underlying data types for the artifact's important fields"
+        }
+    ],
+    "platform_version": "4.10.2.47587",
+    "python_version": "3"
+}

@@ -1,0 +1,28 @@
+{
+    "create_time": "2021-07-27T01:25:36.704763+00:00",
+    "custom_function_id": "1c113c23f8160a4f31765f8b2ee443f4c5771a2d",
+    "description": "Returns the number of artifacts on the datapath",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Enter the datapath you want to count the number of entries for",
+            "input_type": "list",
+            "name": "request_path",
+            "placeholder": "filtered-data:filter_2:condition_1:artifact:*.cef"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "num_artifacts",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.10.3.51237",
+    "python_version": "3"
+}

@@ -1,0 +1,22 @@
+name: Raise personnel awareness
+id: 145a82b5-cafd-468e-b487-737fdf13d6a4
+tags:
+  - picerl
+  nist:
+    - RS.RP
+description: Raise personnel awareness regarding phishing, ransomware, social engineering, and other attacks that involve user interaction
+automation:
+  is_note_required: false
+  role:
+  sla_type: minutes
+  sla:
+  action:
+  playbooks:
+    - scm:
+      playbook:
+references:
+  - https://attack.mitre.org/mitigations/M1017/
+how_to_implement: Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.
+date: '2021-03-05'
+version: 2
+author: Rob Gresham, Splunk

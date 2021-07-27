@@ -1,0 +1,242 @@
+{
+    "status": "published",
+    "description": "This playbook is designed to guide an analyst in performing the tasks necessary to investigate and respond to an event containing a suspicious process.\n\nThis is based on the SANS Incident Response Cycle with acronym PICERL:\nPreparation (This step is where this template was created)\nIdentification\nContainment\nEradication\nRecovery\nLessons Learned\n\nReference: https://www.sans.org/media/score/504-incident-response-cycle.pdf",
+    "modified_time": "2020-04-16T17:05:46.073160Z",
+    "name": "Process Investigation",
+    "is_default": true,
+    "create_time": "2020-04-16T17:02:21.938074Z",
+    "is_note_required": false,
+    "phases": 
+    [
+        {
+            "tasks": [
+                {
+                    "name": "Initial Results Review",
+                    "suggestions": {
+                        "playbooks": [],
+                        "actions": []
+                    },
+                    "modified_time": "2020-04-16T17:05:46.037187Z",
+                    "create_time": "2020-04-16T17:02:21.953364Z",
+                    "sla_type": "minutes",
+                    "sla": null,
+                    "order": 1,
+                    "is_note_required": false,
+                    "description": "Review the VT results as shown below.  VT has shown malicious, so review for accuracy, then run the \"Rare Process - Identification\" playbook in the Identification Phase below to take ownership of the case and gather more information."
+                }
+            ],
+            "name": "Preparation",
+            "modified_time": "2020-04-16T17:05:46.032379Z",
+            "create_time": "2020-04-16T17:02:21.948095Z",
+            "sla_type": "minutes",
+            "template": 9,
+            "sla": null,
+            "order": 1
+        },
+        {
+            "tasks": [
+                {
+                    "name": "Accept Case & Gather Further Information",
+                    "suggestions": {
+                        "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "Rare Process Case  - Identification"
+                            }
+                        ],
+                        "actions": []
+                    },
+                    "modified_time": "2020-04-16T17:05:46.042338Z",
+                    "create_time": "2020-04-16T17:02:22.117449Z",
+                    "sla_type": "minutes",
+                    "sla": null,
+                    "order": 1,
+                    "is_note_required": false,
+                    "description": "Run the attached playbook to gather information about the filehash in the event.  This will run Splunk queries for other related information and also gather information about the workstation where the file was found using LDAP."
+                },
+                {
+                    "name": "Analyze Action Results",
+                    "suggestions": {
+                        "playbooks": [],
+                        "actions": []
+                    },
+                    "modified_time": "2020-04-16T17:05:46.044269Z",
+                    "create_time": "2020-04-16T17:02:22.120032Z",
+                    "sla_type": "minutes",
+                    "sla": null,
+                    "order": 2,
+                    "is_note_required": false,
+                    "description": "Review the results of the above playbook and determine if the process needs to be contained/blocked and/or if the workstation has been compromised.  If either of these are true, proceed to run the playbook attached to the containment phase below."
+                }
+            ],
+            "name": "Identification",
+            "modified_time": "2020-04-16T17:05:46.039293Z",
+            "create_time": "2020-04-16T17:02:21.956898Z",
+            "sla_type": "minutes",
+            "template": 9,
+            "sla": null,
+            "order": 2
+        },
+        {
+            "tasks": [
+                {
+                    "name": "Block and Quarantine",
+                    "suggestions": {
+                        "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "Rare Process Case - Containment"
+                            }
+                        ],
+                        "actions": []
+                    },
+                    "modified_time": "2020-04-16T17:05:46.049176Z",
+                    "create_time": "2020-04-16T17:02:22.203831Z",
+                    "sla_type": "minutes",
+                    "sla": null,
+                    "order": 1,
+                    "is_note_required": false,
+                    "description": "If this process is determined to be malicious or otherwise unwanted, run the attached playbook to block this hash and quarantine all devices where it was found."
+                },
+                {
+                    "name": "Note any failures",
+                    "suggestions": {
+                        "playbooks": [],
+                        "actions": []
+                    },
+                    "modified_time": "2020-04-16T17:05:46.051088Z",
+                    "create_time": "2020-04-16T17:02:22.206337Z",
+                    "sla_type": "minutes",
+                    "sla": null,
+                    "order": 2,
+                    "is_note_required": false,
+                    "description": "Make a note below of any failures to execute the above actions through the automated playbook."
+                }
+            ],
+            "name": "Containment",
+            "modified_time": "2020-04-16T17:05:46.046277Z",
+            "create_time": "2020-04-16T17:02:22.121650Z",
+            "sla_type": "minutes",
+            "template": 9,
+            "sla": null,
+            "order": 3
+        },
+        {
+            "tasks": [
+                {
+                    "name": "Manual Eradication",
+                    "suggestions": {
+                        "playbooks": [],
+                        "actions": []
+                    },
+                    "modified_time": "2020-04-16T17:05:46.055916Z",
+                    "create_time": "2020-04-16T17:02:22.209874Z",
+                    "sla_type": "minutes",
+                    "sla": null,
+                    "order": 1,
+                    "is_note_required": false,
+                    "description": ""
+                },
+                {
+                    "name": "Ticket creation for desktop wipe/rebuild",
+                    "suggestions": {
+                        "playbooks": [],
+                        "actions": []
+                    },
+                    "modified_time": "2020-04-16T17:05:46.057874Z",
+                    "create_time": "2020-04-16T17:02:22.211476Z",
+                    "sla_type": "minutes",
+                    "sla": null,
+                    "order": 2,
+                    "is_note_required": false,
+                    "description": ""
+                }
+            ],
+            "name": "Eradication",
+            "modified_time": "2020-04-16T17:05:46.053089Z",
+            "create_time": "2020-04-16T17:02:22.207945Z",
+            "sla_type": "minutes",
+            "template": 9,
+            "sla": null,
+            "order": 4
+        },
+        {
+            "tasks": [
+                {
+                    "name": "Enact more permanent prevention controls",
+                    "suggestions": {
+                        "playbooks": [],
+                        "actions": []
+                    },
+                    "modified_time": "2020-04-16T17:05:46.062711Z",
+                    "create_time": "2020-04-16T17:02:22.214853Z",
+                    "sla_type": "minutes",
+                    "sla": null,
+                    "order": 1,
+                    "is_note_required": false,
+                    "description": ""
+                },
+                {
+                    "name": "Build specific detection(s)",
+                    "suggestions": {
+                        "playbooks": [],
+                        "actions": []
+                    },
+                    "modified_time": "2020-04-16T17:05:46.064600Z",
+                    "create_time": "2020-04-16T17:02:22.216450Z",
+                    "sla_type": "minutes",
+                    "sla": null,
+                    "order": 2,
+                    "is_note_required": false,
+                    "description": ""
+                }
+            ],
+            "name": "Recovery",
+            "modified_time": "2020-04-16T17:05:46.059898Z",
+            "create_time": "2020-04-16T17:02:22.213046Z",
+            "sla_type": "minutes",
+            "template": 9,
+            "sla": null,
+            "order": 5
+        },
+        {
+            "tasks": [
+                {
+                    "name": "Update records",
+                    "suggestions": {
+                        "playbooks": [],
+                        "actions": []
+                    },
+                    "modified_time": "2020-04-16T17:05:46.069537Z",
+                    "create_time": "2020-04-16T17:02:22.219842Z",
+                    "sla_type": "minutes",
+                    "sla": null,
+                    "order": 1,
+                    "is_note_required": false,
+                    "description": ""
+                },
+                {
+                    "name": "Update procedures",
+                    "suggestions": {
+                        "playbooks": [],
+                        "actions": []
+                    },
+                    "modified_time": "2020-04-16T17:05:46.071433Z",
+                    "create_time": "2020-04-16T17:02:22.221422Z",
+                    "sla_type": "minutes",
+                    "sla": null,
+                    "order": 2,
+                    "is_note_required": false,
+                    "description": ""
+                }
+            ],
+            "name": "Lessons Learned",
+            "modified_time": "2020-04-16T17:05:46.066588Z",
+            "create_time": "2020-04-16T17:02:22.218031Z",
+            "sla_type": "minutes",
+            "template": 9,
+            "sla": null,
+            "order": 6
+        }
+    ]
+}

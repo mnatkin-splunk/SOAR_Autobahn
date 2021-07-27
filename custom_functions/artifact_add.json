@@ -1,0 +1,66 @@
+{
+    "create_time": "2021-05-19T13:42:57.466983+00:00",
+    "custom_function_id": "95d3b8fbf427c86b2b76d5419681ad0c760096c1",
+    "description": "Add an artifact to a container",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "list",
+            "name": "cef",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "item",
+            "name": "severity",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "item",
+            "name": "container_id",
+            "placeholder": "container:id"
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "item",
+            "name": "label",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "list",
+            "name": "name",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "list",
+            "name": "field_mapping",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "item",
+            "name": "run_automation",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "*.artifact_id",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.10.2.47587",
+    "python_version": "3"
+}

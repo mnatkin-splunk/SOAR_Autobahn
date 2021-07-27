@@ -1,0 +1,229 @@
+{
+    "name": "POV_AWS_SecurityHub_Triage",
+    "description": "Use this workbook to triage events that are created with the aws_security_hub label, to do an initial investigation before escalating if needed. ",
+    "status": "published",
+    "is_default": false,
+    "is_note_required": true,
+    "phases": [
+        {
+            "id": "new-phase1",
+            "name": "Identification",
+            "order": 1,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task1",
+                    "name": "Accept Event and Assign Owner",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "Accept event and assign the owner to the event and the first task.",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Accept_Event"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task2",
+                    "name": "Gather AWS Context",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "Run the ec2 aws context playbook to discover the AWS security groups, instance firewall connectivity, running processes and active connections.",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_EC2_AWS_Context"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task3",
+                    "name": "Gather EC2 Instance Artifacts",
+                    "order": 3,
+                    "owner": null,
+                    "role": null,
+                    "description": "Gather artefacts from the affected EC2 instance, to make a determination as to whether any unauthorised access has occurred",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_EC2_Instance_Investigation"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task4",
+                    "name": "Investigate Logon Activity",
+                    "order": 4,
+                    "owner": null,
+                    "role": null,
+                    "description": "Investigate host audit logs and verify login activity.",
+                    "actions": [
+                            "run query"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task5",
+                    "name": "Gather Attacking IP Context",
+                    "order": 5,
+                    "owner": null,
+                    "role": null,
+                    "description": "Gather artefacts about the attacking IP address",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_EC2_Remote_Probe_Context"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task6",
+                    "name": "Escalate the incident to Asset Owner",
+                    "order": 6,
+                    "owner": null,
+                    "role": null,
+                    "description": "Raise the incident with the asset owner for awareness and authorisation to move into an isolated security group. Attach the response (email or ticket ID/text) to the event for tracking once received.",
+                    "actions": [
+                            "send email",
+                            "create ticket"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task7",
+                    "name": "Determined Unauthorised Access",
+                    "order": 7,
+                    "owner": null,
+                    "role": null,
+                    "description": "Make a determination as to whether unauthorised access may have occurred to this instance. \n\nIf so, tag the event \"unauthorised_access\", and escalate to the Incident Responders.\n\nOtherwise, tag the event with \"benign\"",
+                    "actions": [],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase2",
+            "name": "Containment",
+            "order": 2,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task8",
+                    "name": "Isolate the Host",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "If appropriate move the EC2 instance to an isolated Security Group",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_EC2_Instance_Isolation"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task9",
+                    "name": "Remove Connectivity with the Internet - Manual",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "Prevent any further initial or ongoing communication to the internet. Block communication to the internet for the offending IP/Port combination.",
+                    "actions": [
+                            "block ip"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase3",
+            "name": "Remediation",
+            "order": 3,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task10",
+                    "name": "Verify Correct Connectivity Rules",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "Confirm the appropriate Security Group / Instance firewall rules to prevent further instances being probed, or further events of this nature to this instance. Attach the communication to the event for information/authorisation from the asset owner.",
+                    "actions": [
+                            "send email",
+                            "create ticket"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task11",
+                    "name": "Transition Host to Production Security Group",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "Once the Security Group / Firewall rules have been corrected, move the instance back into the original / corrected security group.",
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase4",
+            "name": "Lessons Learnt",
+            "order": 4,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task11",
+                    "name": "Close Event",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "Update the event notes and close",
+                    "actions": [],
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Close_Event"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        }
+    ]
+}

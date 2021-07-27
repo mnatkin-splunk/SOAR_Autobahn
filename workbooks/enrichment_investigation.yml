@@ -1,0 +1,69 @@
+name: "Enrichment investigation"
+id: 0534dee5-5682-4fb1-ab14-6d8b8c619bc2
+sla_type: minutes
+sla: 60
+is_note_required: false
+description: This workbook can be used for collecting enrichment for common indicators like (IP Addresses, Domains, URLs and file hashes. File detonation and URL detonation are not recommended unless internal or from a paid cloud service. Those detonation playbooks have not been provided as part of this integration. This workbook has complementary ingestion and utility automation playbooks that can be used to support this workbooks workflow.
+
+Indicator enrichment can be a religion and is generally very preferential to products that individuals either openly have access to or mandated by the customer organization. We do not specifically endorse these services used. They are considered free and representative of the space they support.
+response_phase:
+  - identification:
+      - id: 9bfbaa5f-b2ab-4ff5-acaf-cdd8105d6b92
+        name: enrichment_identification
+tags:
+  - PICERL
+  - SOAR
+  - PHANTOM
+  assets:
+  - ldap
+  - splunk
+  - virustotal
+  - alienvault
+  - maxmind
+  - whois
+  - hybridanalysis
+  - phantom_rest_api
+  analytics_story:
+  - AWS Network ACL Activity
+  - Collection and Staging
+  - Command and Control
+  - DHS Report TA18-074A
+  - Data Protection
+  - Disabling Security Tools
+  - 'Emotet Malware  DHS Report TA18-201A '
+  - Hidden Cobra Malware
+  - Lateral Movement
+  - Malicious PowerShell
+  - Monitor for Unauthorized Software
+  - Netsh Abuse
+  - Orangeworm Attack Group
+  - Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns
+  - Prohibited Traffic Allowed or Protocol Mismatch
+  - Ransomware
+  - SamSam Ransomware
+  - Suspicious AWS Traffic
+  - Suspicious Command-Line Executions
+  - Suspicious DNS Traffic
+  - Suspicious MSHTA Activity
+  - Suspicious WMI Use
+  - Suspicious Windows Registry Activities
+  - Unusual Processes
+  - Windows Defense Evasion Tactics
+  - Windows File Extension and Association Abuse
+  - Windows Log Manipulation
+  - Windows Persistence Techniques
+  - Windows Privilege Escalation
+  - Windows Service Abuse
+  nist:
+  - RS.RP
+  - RS.AN
+  cis20:
+  - CIS 4
+  - CIS 6
+  - CIS 8
+  - CIS 19
+how_to_implement: This workbook provides the initial steps for atomic indicator enrichment.  There is no detonation process here because detonation should be either an internal or paid for service for customers.  Additionally, malware detonation can be a time consuming process (some implemementation put a timing delay on the processing). Not including this will ensure your playbooks are fast and that you can always call it as an additonal process with a separate playbook.
+Indicator enrichment is a necessary first process regardless of the inital alarm. In developing our best practices, we see enrichment of atomic indicators is the first step and the easiest to start and build a foundation of automation and orchestration upon.
+version: 2
+date: '2021-02-06'
+author: Rob Gresham, Splunk

@@ -1,0 +1,14 @@
+{
+    "description": "",
+    "type": "information",
+    "product_name": "Phantom",
+    "disabled": false,
+    "configuration": {
+        "_reserved_environment_variables": {},
+        "verify_certificate": false,
+        "auth_token": "$$$PH_AUTH_TOKEN$$$",
+        "phantom_server": "$$$PH_SERVER_NAME$$$"
+    },
+    "product_vendor": "Phantom",
+    "name": "helper"
+}

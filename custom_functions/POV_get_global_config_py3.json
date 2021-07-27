@@ -1,0 +1,28 @@
+{
+    "create_time": "2021-07-27T01:25:44.656914+00:00",
+    "custom_function_id": "4550692abccd32e1b5811169602aadfae0dd20c2",
+    "description": "Takes a comma separated list of keys to retrieve from globalconfig custom list.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "return_keys",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "global_item",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.10.3.51237",
+    "python_version": "3"
+}

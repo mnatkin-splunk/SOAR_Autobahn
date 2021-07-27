@@ -1,0 +1,40 @@
+{
+    "create_time": "2021-03-19T16:02:36.834299+00:00",
+    "custom_function_id": "dd71a5a0a8fe11f95ff6a674f52279b171d5c0d4",
+    "description": "Takes a key name and splits the output for easier access for actions downstream",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "A text string that represents the name of the key saved for a save_run_data() call",
+            "input_type": "item",
+            "name": "key",
+            "placeholder": "my_key"
+        },
+        {
+            "contains_type": [],
+            "description": "Flatten nested lists \ni.e: [ \"list 1\", [\"nested list 1\"] , \"list 2\" ]",
+            "input_type": "item",
+            "name": "flatten_lists",
+            "placeholder": "True or False"
+        },
+        {
+            "contains_type": [],
+            "description": "Reconstruct data as a valid json path output. If set to False, data will be sent straight to output without parsing.",
+            "input_type": "item",
+            "name": "output_as_json",
+            "placeholder": "True or False"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "*.output",
+            "description": "Start of output. If data contains valid JSON structures and output_as_json is set to True, access output keys as normal action results,\ni.e \"*.output.my_key1\""
+        }
+    ],
+    "platform_version": "4.10.2.47587",
+    "python_version": "3"
+}

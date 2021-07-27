@@ -1,0 +1,12 @@
+{
+    "description": "",
+    "type": "information",
+    "product_name": "Screenshot Machine Demo",
+    "configuration": {
+        "ssmachine_key": "8RUB7HLhl5BB64oB+WVCNg==",
+        "_reserved_environment_variables": {},
+        "ssmachine_hash": "ON3JaJgKQ7YyOq49rRnUng=="
+    },
+    "product_vendor": "Screenshot Machine",
+    "name": "screenshotmachine"
+}

@@ -1,0 +1,73 @@
+name: Indicator Analysis
+id: 9bfbaa5f-b2ab-4ff5-acaf-cdd8105d6b92
+tags:
+  - PICERL
+  - SOAR
+  nist:
+  - RS.RP
+  - RS.AN
+  cis20:
+  - CIS 4
+  - CIS 6
+  - CIS 8
+  - CIS 19
+description: 1. Review threat intelligence information generated for each of the indicator notes in this task.  (hash, filename, ip, domain, url).
+
+2. When completed with your review of the notes, execute the  "Process Indicators" workbook playbook. This playbook will prompt you to answer the questions below. Please make any changes necessary and supporting comments.
+   - Validate indicator confidence from High, Medium, Low?
+   - Provide Threat Level from Critical, High, Medium, Low?
+   - Evaluate reputation and intelligence and determine if malware, APT, Suspicious, Allowed or Undetermined?
+
+When completed the indicators will be updated with your additional threat intelligence assessment and this task will be completed.
+inputs:
+- destinationAddress
+- soureAddress
+- src_ip
+- dest
+- dest_ip
+- sourceDnsDomain
+- destinationDnsDomain
+- domain
+- requestUrl
+- fileHash
+search:
+automation:
+  role:
+  sla_type: minutes
+  sla: 30
+  is_note_required: false
+  actions:
+    - ip reputation
+    - domain reputation
+    - url reputation
+    - file reputation
+  playbooks:
+    - scm: escu
+      playook: Indicator Analysis - IP
+    - scm: escu
+      playook: Indicator Analysis - Domain
+    - scm: escu
+      playook: Indicator Analysis - URL
+    - scm: escu
+      playook: Indicator Analysis - Filehash
+    - scm: escu
+      playook: Process Indicators
+references:
+how_to_implement: 1. Review 'Analysis of Indicator: <indicator> | Threat <threat_level>| Confidence <conf_level>'. This report provides intelligence, Sandbox reputation, and additional information like whois or domain whois.
+  2. While reviewing the note data your are confirm and looking for indications of APT, known malware references
+    * APT - Looking for references to APT naming (APT29 or such) or codeword like namings
+    * Malware - Looking for reference to known malware campaigns or intrusions
+    * Suspicious - Any odd references or something that looks suspicious.
+    * Allowed - Authorized software for your organization
+    * Undetermined - Indicator with no information or any data about indicator
+  3. Threat Level should be based on known indications.
+    * APT - Critical
+    * Malware - High
+    * Suspicous - Medium
+    * Allowed - Low
+    * Undetermined - Low
+  4. Threat Confidence should be based on the number of confirmed resources you could use to collaborate your assessment
+  5. Lastly, provide any commentary on why the level changed from the automate analysis.
+date: '2021-02-06'
+version: 2
+author: Rob Gresham, Splunk

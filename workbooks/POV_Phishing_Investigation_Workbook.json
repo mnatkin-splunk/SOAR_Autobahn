@@ -1,0 +1,292 @@
+{
+    "name": "POV_Phishing_Investigation_Workbook",
+    "description": "Use this workbook to walk through a suspected Phishing Email Received.",
+    "phases": [
+        {
+            "id": "new-phase1",
+            "name": "Identification",
+            "order": 1,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task1",
+                    "name": "Accept Event and Assign Owner",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "phase": 50,
+                    "description": "Accept event and assign owner to the event and the first task.",
+                    "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Accept_Event"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task2",
+                    "name": "Validate User Information",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "Review the note with username, LDAP account info,  business unit, email, manager, phone #, location and workstation name, ip address and OS type",
+                    "actions": [
+                            "get user attributes",
+                            "get system attributes",
+                            "run query"
+                        ],
+                        "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_AddContext_LDAP"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task3",
+                    "name": "Enrich Network Artifacts",
+                    "order": 3,
+                    "owner": null,
+                    "role": null,
+                    "description": "Add Domain, URL, and IP context from external sources",
+                    "actions": [
+                            "file reputation",
+                            "url reputation",
+                            "ip reputation",
+                            "domain reputation",
+                            "lookup domain",
+                            "whois domain",
+                            "whois ip"
+                        ],
+                        "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Phishing_Network_Indicator_Enrichment"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task4",
+                    "name": "Review Email Indicators",
+                    "order": 4,
+                    "owner": null,
+                    "role": null,
+                    "description": "Review Domain / URL, file and IP analysis notes, Email body and headers.  \n\nMake a determination as the whether the email is a phish, spam or clean and provide a reason why you made this determination. \n\nSend an email to the customer on the determination of email status.  \n\nCreate a ticket/send an email to the team that have the authority to search mailboxes for more offending emails. Annotate the ticket with why the determination has been made.",
+                    "actions": [
+                            "send email"
+                        ],
+                        "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Review_Indicators"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task5",
+                    "name": "Determine Mailboxes Affected",
+                    "order": 5,
+                    "owner": null,
+                    "role": null,
+                    "description": "Either automatically, or manually search mailboxes for other occurences of this email. Checking for the sender and subject as matches (either / OR).\n\nIf any other emails are identified, notify the recipients that a malicious email has been discovered and being investigated. \n\nIf you have an escalation path, such as notifying an Information Security Officer/Manager, then add a task here, or notify by email.",
+                    "actions": [
+                            "send email",
+                            "create ticket"
+                        ],
+                        "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Hunt_Email_Indicators"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task6",
+                    "name": "Hunt Evidence of Execution",
+                    "order": 6,
+                    "owner": null,
+                    "role": null,
+                    "description": "If this is confirmed as a Phishing Email, we need to know if the host has been compromised.\n\nLook at your DNS logs, web proxy logs and SHA hits on hosts, and Process Start Event Logs for evidence of clicked links or opening of suspicious files. \n\nTag Domain Artifacts and URL Artifacts discovered as malicious with 'blocking' and mark as evidence.\n \n\nIf a host has been compromised, start a host investigation for the known hosts in scope.",
+                    "actions": [
+                            "run query",
+                            "send email",
+                            "add note",
+                            "create ticket"
+                        ],
+                        "playbooks": [],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase2",
+            "name": "Containment",
+            "order": 2,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task7",
+                    "name": "Sinkhole or Block External Indicators of Compromise",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "Prevent any further initial, or ongoing communication to the internet. \n\nCreate a DNS sinkhole or block known indicators of compromise (IPs, URLs, Domains) \n\nEnsure blocked tag is present on the Indicator. \n\nIf required update any ticketing information with the appropriate blocked status.",
+                    "actions": [
+                            "block hash",
+                            "block ip"
+                        ],
+                        "playbooks": [
+                            {
+                                "scm": "local",
+                                "playbook": "POV_Sinkhole_or_Block_External_Indicators"
+                            }
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task8",
+                    "name": "Update Safelinks - Manual",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "If you use Office 365 and have safelinks policy protection configured, update the policy with the domain and senders to be blocked.",
+                    "actions": [
+                            "send email",
+                            "create ticket"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase3",
+            "name": "Eradication",
+            "order": 3,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task9",
+                    "name": "Remove Emails",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "Remove any emails identified with the phishing or spam campaign.\n\nEither create a ticket, send an email to the right team or automatically remove with a playbook.",
+                    "actions": [
+                            "send email",
+                            "create ticket"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase4",
+            "name": "Recovery",
+            "order": 4,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task9",
+                    "name": "Determine Mailboxes Cleaned and Indicators Blocked",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "Whether automated or manual removal has been requested, validate that all emails have been removed using the both sender and subject to verify. \n\nSend an email to customers to notify that the email has been removed. \n\nReview indicators that were \"blocking\" to \"blocked\".",
+                    "actions": [
+                            "run query",
+                            "send email"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task10",
+                    "name": "Assign Phishing Training",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "Assign phishing training to the users that clicked the link.",
+                    "actions": [
+                            "send email"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        },
+        {
+            "id": "new-phase5",
+            "name": "Lessons Learnt",
+            "order": 5,
+            "sla": null,
+            "sla_type": "minutes",
+            "tasks": [
+                {
+                    "id": "new-task11",
+                    "name": "Develop Incident Report",
+                    "order": 1,
+                    "owner": null,
+                    "role": null,
+                    "description": "RECOMMEND assigned task to SOC Manager to review incident and close task as completed with note for report needed or not.\\nDetermine criteria for incident report creation for x # of compromised or example of a good investigation or resolved to closed status change by additional tier (manager) so that if a report needs to be done it can be requested here.",
+                    "actions": [
+                            "send email"
+                        ],
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task12",
+                    "name": "Conduct Lessons Learned Exercise",
+                    "order": 2,
+                    "owner": null,
+                    "role": null,
+                    "description": "RECOMMEND assigned task to SOC Manager to review incident and close task as completed with note for report needed or not.\\nDetermine criteria for lessons learned exercise for x # of compromised or example of a good investigation or resolved to closed status change by additional tier (manager) so that if a report needs to be done it can be requested here.",
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                },
+                {
+                    "id": "new-task13",
+                    "name": "Close Event",
+                    "order": 3,
+                    "owner": null,
+                    "role": null,
+                    "description": "Close event with Department \n\nDepartment from LDAP or locally known.",
+                    "is_note_required": true,
+                    "sla": null,
+                    "sla_type": "minutes"
+                }
+            ]
+        }
+    ]
+}

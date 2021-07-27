@@ -1,0 +1,56 @@
+{
+    "create_time": "2021-07-27T01:25:52.538364+00:00",
+    "custom_function_id": "4c8c4027f7916e9543c27fb9c4df23e568ee6580",
+    "description": "Grabs the user running the playbook and sets the owner of the event to the current user. Passes current_owner out for downstream use.\n\nDerek King  - Splunk",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "phantom container id"
+            ],
+            "description": "Container id",
+            "input_type": "list",
+            "name": "container",
+            "placeholder": "id"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "currentOwner",
+            "description": "Current owner running the playbook"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "userUrl",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "status",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "message",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "username",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.10.3.51237",
+    "python_version": "3"
+}

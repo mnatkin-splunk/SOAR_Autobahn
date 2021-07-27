@@ -1,0 +1,71 @@
+{
+    "create_time": "2021-07-27T01:25:48.391129+00:00",
+    "custom_function_id": "2a93344a5b1079f65d9205e9951c5d5633a5226f",
+    "description": "Based on a determination format an email template as phish, clean, spam.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "container_id",
+            "placeholder": "container:id"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "external_sender",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "email_subject",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "email_date",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "determination",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "response_email_body",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "status",
+            "description": "success or failed"
+        }
+    ],
+    "platform_version": "4.10.3.51237",
+    "python_version": "3"
+}

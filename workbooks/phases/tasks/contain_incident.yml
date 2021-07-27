@@ -1,0 +1,32 @@
+name: Contain Incident
+id: 735335a5-7ac0-4bdf-b1d3-6f4a6767d02f
+tags:
+  analytics_story:
+    - Response Plan
+  nist:
+    - RS.RP
+description: Use atomic indicators to block and contain malicious activity. Use host and network protection tools to block, pause, drop, or quarantine affected machines. You want to be able to move up to the highest level of indicator possible (e.g. using the pyramid of pain is a good example)
+ 1. Determine the appropriate containment technique either with soft block (localized blocking of a specific indictors) or hard block (regionalized blocking, quarantine whole hosts, net blocks, etc) techniques
+automation:
+  role:
+  sla_type: minutes
+  sla:
+  is_note_required: false
+  actions:
+    - block ip
+    - block domain
+    - block url
+    - block process
+    - terminate process
+    - quarantine host
+    - quarantine device
+  playbooks:
+    - scm:
+      playook:
+references:
+  - 3.3.1 Choosing a Containment Strategy - https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
+requirements:
+how_to_implement:
+date: '2021-03-06'
+version: 2
+author: Rob Gresham, Splunk

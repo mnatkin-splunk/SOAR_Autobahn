@@ -1,0 +1,19 @@
+name: Lessons learned
+id:
+sla_type: minutes
+sla:
+description: One of the most important parts of incident response is learning and improving. Each incident response team should evolve to reflect new threats, improved technology, and lessons learned. Holding a “lessons learned” meeting with all involved parties after a major incident and lessor incidents at a regular interval. Consolidating the incident details and measuring the incident important data points to ensure the most effective proceses are being used.
+tags:
+    - picerl
+  nist:
+    RS.RP
+references:
+  - 3.4 Post-Incident Activity -  https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
+response_task:
+  - id: 69d25415-408f-462a-899f-9bc8eef8c299
+    name: create_follow-up_report
+  - id: 43fc5e87-d819-460a-a740-de2066b18a29
+    name: provide_lessons_learned_tasks_or_changes
+date: '2021-03-05'
+version: 3
+author: Rob Gresham, Splunk

@@ -1,0 +1,37 @@
+{
+    "description": "",
+    "tags": [],
+    "type": "email",
+    "product_version": "",
+    "product_name": "Office 365 Demo",
+    "disabled": false,
+    "configuration": {
+        "username": "admin@splunkdemo.com",
+        "auth_type": "Basic",
+        "fed_ping_url": "https://corp.contoso.com/fss/idp/sts.wst?TokenProcessorId=SentryPOC",
+        "max_containers": 100,
+        "extract_hashes": true,
+        "url": "https://outlook.office365.com/EWS/Exchange.asmx",
+        "poll_folder": "Inbox",
+        "poll_user": "phish@splunkdemo.com",
+        "first_run_max_emails": 2000,
+        "ingest": {
+            "interval_mins": "60",
+            "poll": false,
+            "container_label": "email",
+            "start_time_epoch_utc": null
+        },
+        "add_body_to_header_artifacts": false,
+        "extract_domains": true,
+        "extract_ips": true,
+        "fed_verify_server_cert": true,
+        "extract_attachments": true,
+        "authority_url": "https://login.windows.net/contoso.onmicrosoft.com",
+        "use_impersonation": false,
+        "password": "VDFSSDJutmk93hmePvK2ag==",
+        "extract_urls": true,
+        "ingest_manner": "oldest first"
+    },
+    "product_vendor": "Microsoft",
+    "name": "office365"
+}

@@ -1,0 +1,28 @@
+{
+    "create_time": "2021-07-27T01:25:28.846668+00:00",
+    "custom_function_id": "2cb171ceb7b25368d1ed7bceba403de3a5e42632",
+    "description": "Gets Email properties, and renames artifacts ready for downstream playbooks.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "phantom container id"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "container_id",
+            "placeholder": "container:id"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "outputs",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.10.3.51237",
+    "python_version": "3"
+}

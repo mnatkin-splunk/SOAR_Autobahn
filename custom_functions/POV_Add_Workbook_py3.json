@@ -1,0 +1,20 @@
+{
+    "create_time": "2021-07-27T01:25:24.897613+00:00",
+    "custom_function_id": "7acce765d26d15b9c3c736d0df9d289a60541ab2",
+    "description": "Reads the event label and auto assigns the correct workbook to the event.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "phantom container id"
+            ],
+            "description": "Input container id",
+            "input_type": "item",
+            "name": "container",
+            "placeholder": "container:id"
+        }
+    ],
+    "outputs": [],
+    "platform_version": "4.10.3.51237",
+    "python_version": "3"
+}

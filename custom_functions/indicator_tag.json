@@ -1,0 +1,29 @@
+{
+    "create_time": "2021-05-19T14:02:36.165809+00:00",
+    "custom_function_id": "a30d73962e052af074e41c9940d76c431667ec02",
+    "description": "Tag an indicator by list",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "An indicator value to tag",
+            "input_type": "item",
+            "name": "indicator",
+            "placeholder": "my_indicator"
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Comma separated list of tags",
+            "input_type": "item",
+            "name": "tags",
+            "placeholder": "tag1,tag2,...,tagk"
+        }
+    ],
+    "outputs": [],
+    "platform_version": "4.10.2.47587",
+    "python_version": "3"
+}

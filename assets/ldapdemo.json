@@ -1,0 +1,27 @@
+{
+    "action_whitelist": {},
+    "concurrency_limit": 1,
+    "configuration": {
+        "_reserved_environment_variables": {},
+        "force_ssl": true,
+        "password": "jlsbFyH0ztxnnh17GXYIbA==",
+        "server": "10.10.10.10",
+        "username": "admin"
+    },
+    "description": "",
+    "disabled": false,
+    "effective_user": 2,
+    "id": 19,
+    "name": "ldap",
+    "primary_voting": 0,
+    "product_name": "LDAP Demo",
+    "product_vendor": "Microsoft",
+    "product_version": "",
+    "secondary_voting": 0,
+    "tags": [],
+    "tenants": [],
+    "token": null,
+    "type": "directory service",
+    "validation": {},
+    "version": 1
+}

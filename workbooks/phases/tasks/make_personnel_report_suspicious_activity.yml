@@ -1,0 +1,22 @@
+name: Make personnel report suspicious activity
+id: f83abcae-3734-45ff-99ef-b17eb937c057
+tags:
+  - picerl
+  nist:
+    - RS.RP
+description: Develop a simplified, company wide-known way to contact IR team in case of suspicious activity on the user system. Make sure that the personnel is aware of it, can and will use it.
+automation:
+  is_note_required: false
+  role:
+  sla_type: minutes
+  sla:
+  action:
+  playbooks:
+    - scm:
+      playbook:
+references:
+  - Organizational Acceptable Use Policy
+how_to_implement: Develop a simplified, company wide-known way to contact IR team in case of suspicious activity on the user system. Make sure that the personnel is aware of it, can and will use it.
+date: '2021-03-05'
+version: 2
+author: Rob Gresham, Splunk

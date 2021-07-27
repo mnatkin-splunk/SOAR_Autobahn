@@ -1,0 +1,17 @@
+{
+    "description": "",
+    "type": "generic",
+    "product_name": "Timer",
+    "configuration": {
+        "event_name": "$label created on $now",
+        "ingest": {
+            "cron": "0 1 * * *",
+            "interval_mins": "30",
+            "poll": true,
+            "container_label": "cleanup_event",
+            "start_time_epoch_utc": 1570553013
+        }
+    },
+    "product_vendor": "Phantom",
+    "name": "demo cleanup timer"
+}

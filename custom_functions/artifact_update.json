@@ -1,0 +1,42 @@
+{
+    "create_time": "2021-05-19T13:58:11.071462+00:00",
+    "custom_function_id": "21fb5b3604ae82af7901488f4b1a07387bd4d525",
+    "description": "Update artifact with a valid json dictionary. See Phantom Artifact REST API for valid dictionary.\n",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "phantom artifact id"
+            ],
+            "description": "A phantom artifact ID to update",
+            "input_type": "item",
+            "name": "artifact_id",
+            "placeholder": "artifact:*.id"
+        },
+        {
+            "contains_type": [],
+            "description": "JSON dictionary to update artifact",
+            "input_type": "item",
+            "name": "input_json",
+            "placeholder": "{ \"label\": \"events\", \"cef\": {\"field\": \"value\"}} "
+        },
+        {
+            "contains_type": [],
+            "description": "Whether or not to overwrite existing fields with  supplied input json. Defaults to False",
+            "input_type": "item",
+            "name": "overwrite",
+            "placeholder": "True or False"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "phantom artifact id"
+            ],
+            "data_path": "id",
+            "description": "ID of the artifact that was updated"
+        }
+    ],
+    "platform_version": "4.10.2.47587",
+    "python_version": "3"
+}
