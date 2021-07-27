@@ -1,0 +1,2800 @@
+{
+    "blockly": false,
+    "blockly_xml": "<xml></xml>",
+    "category": "Proof of Value",
+    "coa": {
+        "data": {
+            "clean": false,
+            "code_block": "",
+            "description": "This playbook assigns the event with the current phase first task in the current phase and close out the task as accepted.",
+            "hash": "b89a9eae654fc216beaf9ff3c0f31ef9a7a3a35a",
+            "joint": {
+                "cells": [
+                    {
+                        "0": "S",
+                        "1": "T",
+                        "2": "A",
+                        "3": "R",
+                        "4": "T",
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "ref-x": 33,
+                                "ref-y": 8,
+                                "text": "START"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "ref-x": 13,
+                                "xlink:href": "/inc/coa/img/block_icon_start.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'cf_local_POV_set_event_owner_to_current_2' block\n    cf_local_POV_set_event_owner_to_current_2(container=container)\n\n    return",
+                        "callback_code": "# read-only block view not available",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "5340d719-b067-4c65-b266-5ce1afeadd3a",
+                        "inPorts": [],
+                        "join_code": "# read-only block view not available",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_start": 1,
+                        "name": "",
+                        "notes": "",
+                        "number": 0,
+                        "order": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -520,
+                            "y": 380
+                        },
+                        "previous_function": "",
+                        "previous_name": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 54,
+                            "width": 80
+                        },
+                        "status": "",
+                        "title": "START",
+                        "type": "coa.StartEnd",
+                        "warn": false,
+                        "z": 811
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "ad735237-c33d-430a-bccc-82a93294167b",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "5340d719-b067-4c65-b266-5ce1afeadd3a",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "24c8bdb0-c14d-40f3-a015-1a769722aeae",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 839
+                    },
+                    {
+                        "0": "E",
+                        "1": "N",
+                        "2": "D",
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".title": {
+                                "text": "END"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_end.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def on_finish(container, summary):\n    phantom.debug('on_finish() called')\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n    return",
+                        "callback_code": "# read-only block view not available",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "POV_get_current_task, updateTaskCompleted",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "3c94bf7c-15cf-4fc4-8484-98e73a4c79be",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "# read-only block view not available",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_start": 1,
+                        "name": "",
+                        "notes": "",
+                        "number": 0,
+                        "order": 9,
+                        "outPorts": [],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 920,
+                            "y": 600
+                        },
+                        "previous_function": "",
+                        "previous_name": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 54,
+                            "width": 80
+                        },
+                        "status": "",
+                        "title": "END",
+                        "type": "coa.StartEnd",
+                        "warn": false,
+                        "z": 975
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "a9cc5e24-f1bc-444b-ac7f-13f9dcbb5880",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "91d2380a-2d93-4a19-aa55-d47f7eda04f3",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "78609fdf-0e25-4baa-8172-8aeabf11ca1c",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 1008
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "78e886d9-abcf-4258-a1db-174304b647bb",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "78609fdf-0e25-4baa-8172-8aeabf11ca1c",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "3c94bf7c-15cf-4fc4-8484-98e73a4c79be",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 1010
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "d02deeb7-cf73-4058-8401-3b03d7e46551",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "caf6f1d7-e337-4fe5-beac-de65494bf997",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "3c94bf7c-15cf-4fc4-8484-98e73a4c79be",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 1022
+                    },
+                    {
+                        ".scmName/text": "local",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".customFunction": {
+                                "text": "POV_set_event_owner_to_current"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "local"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            }
+                        },
+                        "block_code": "def cf_local_POV_set_event_owner_to_current_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_local_POV_set_event_owner_to_current_2() called')\n    \n    container_property_0 = [\n        [\n            container.get(\"id\"),\n        ],\n    ]\n\n    parameters = []\n\n    container_property_0_0 = [item[0] for item in container_property_0]\n\n    parameters.append({\n        'container': container_property_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"local/POV_set_event_owner_to_current\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='local/POV_set_event_owner_to_current', parameters=parameters, name='cf_local_POV_set_event_owner_to_current_2', callback=cf_local_POV_get_current_task_2)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "local/POV_set_event_owner_to_current",
+                        "cfInputs": {
+                            "container": {
+                                "collectionType": "container_property",
+                                "dataPath": "container:id",
+                                "paramName": "container_property_0_0",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 19,
+                        "customFunction": "local/POV_set_event_owner_to_current",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "24c8bdb0-c14d-40f3-a015-1a769722aeae",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 47,
+                        "line_start": 16,
+                        "message": "Configuring now",
+                        "name": "POV_set_event_owner_to_current",
+                        "notes": "Set the owner of the event to the id of the identity running the playbook.",
+                        "number": 2,
+                        "order": 2,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -400,
+                            "y": 360
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_local_POV_set_event_owner_to_current_2",
+                        "selectedCustomFunction": {
+                            "description": "Grabs the user running the playbook and sets the owner of the event to the current user. Passes current_owner out for downstream use.\n\nDerek King  - Splunk",
+                            "draftMode": false,
+                            "id": 291,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "POV_set_event_owner_to_current",
+                                    "contains_type": [
+                                        "phantom container id"
+                                    ],
+                                    "custom_function": 291,
+                                    "description": "Container id",
+                                    "id": 667,
+                                    "input_type": "list",
+                                    "name": "container",
+                                    "placeholder": "id"
+                                }
+                            ],
+                            "name": "POV_set_event_owner_to_current",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "POV_set_event_owner_to_current",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 291,
+                                    "data_path": "currentOwner",
+                                    "description": "Current owner running the playbook",
+                                    "id": 1089
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_set_event_owner_to_current",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 291,
+                                    "data_path": "userUrl",
+                                    "description": "",
+                                    "id": 1090
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_set_event_owner_to_current",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 291,
+                                    "data_path": "status",
+                                    "description": "",
+                                    "id": 1091
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_set_event_owner_to_current",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 291,
+                                    "data_path": "message",
+                                    "description": "",
+                                    "id": 1092
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_set_event_owner_to_current",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 291,
+                                    "data_path": "username",
+                                    "description": "",
+                                    "id": 1093
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": [
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_Hunt_Email_Indicators",
+                                        "draft_mode": false,
+                                        "id": 819,
+                                        "name": "POV_Hunt_Email_Indicators",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/Sinkhole or Block external indicators of compromise",
+                                        "draft_mode": false,
+                                        "id": 820,
+                                        "name": "Sinkhole or Block external indicators of compromise",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_Sinkhole_or_Block_External_Indicators",
+                                        "draft_mode": false,
+                                        "id": 821,
+                                        "name": "POV_Sinkhole_or_Block_External_Indicators",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_Accept_Event",
+                                        "draft_mode": false,
+                                        "id": 723,
+                                        "name": "POV_Accept_Event",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/AAA2",
+                                        "draft_mode": false,
+                                        "id": 565,
+                                        "name": "AAA2",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_Review_Indicators_Manually",
+                                        "draft_mode": false,
+                                        "id": 764,
+                                        "name": "POV_Review_Indicators_Manually",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/Hunt Indicators",
+                                        "draft_mode": false,
+                                        "id": 765,
+                                        "name": "Hunt Indicators",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_AddContext_LDAP",
+                                        "draft_mode": false,
+                                        "id": 753,
+                                        "name": "POV_AddContext_LDAP",
+                                        "viewable": true
+                                    }
+                                ]
+                            },
+                            "scmId": 2,
+                            "scmName": "local"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 1026
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "bc331c3c-7335-40b8-9148-467fc80cdd58",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "91d2380a-2d93-4a19-aa55-d47f7eda04f3",
+                            "port": "out-2",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(2) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "4c7af9bd-231a-4c69-8fb3-c5edb1ce2a50",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 1030
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "a6053e43-f3b7-45a4-93ed-c0a154bf9e33",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "4c7af9bd-231a-4c69-8fb3-c5edb1ce2a50",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "89089491-2c9e-4fd9-8812-a3e3f024f626",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 1031
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "d628e7b9-81f8-4531-973c-b86afd1917e8",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "89089491-2c9e-4fd9-8812-a3e3f024f626",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "caf6f1d7-e337-4fe5-beac-de65494bf997",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 1034
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "c04f2172-8baf-4d8a-8267-dbc43db3b84d",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "24c8bdb0-c14d-40f3-a015-1a769722aeae",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "1ff4b41e-8a1c-427d-a190-1d5e1f0bb259",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 1038
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "926550e4-ed81-4ec1-b96f-7c697f2c9c0b",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "1ff4b41e-8a1c-427d-a190-1d5e1f0bb259",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "91d2380a-2d93-4a19-aa55-d47f7eda04f3",
+                            "port": "in",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 1041
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#637282",
+                                "transform": "rotate(45 30 70)"
+                            },
+                            ".inPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 1
+                            },
+                            ".outPorts>.port-0": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                },
+                                "ref-x": 83,
+                                "ref-y": 40
+                            },
+                            ".outPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".outPorts>.port-1": {
+                                "port": {
+                                    "id": "out-2",
+                                    "type": "out"
+                                },
+                                "ref-x": 41,
+                                "ref-y": 82
+                            },
+                            ".outPorts>.port-1>.port-body": {
+                                "port": {
+                                    "id": "out-2",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"cf_local_POV_get_current_task_2:custom_function_result.data.status\", \"==\", \"failed\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        add_comment_4(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    updateTaskInProgress(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "POV_get_current_task",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "hasElse": true,
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "91d2380a-2d93-4a19-aa55-d47f7eda04f3",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 140,
+                        "line_start": 119,
+                        "name": "decision",
+                        "notes": "",
+                        "number": 1,
+                        "order": 6,
+                        "outPorts": [
+                            "out-1",
+                            "out-2"
+                        ],
+                        "outputs": [
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "==",
+                                        "data_type": "",
+                                        "param": "cf_local_POV_get_current_task_2:custom_function_result.data.status",
+                                        "value": "failed"
+                                    }
+                                ],
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "==",
+                                        "data_type": "",
+                                        "param": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "display": "Else",
+                                "logic": "and",
+                                "type": "else"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 100,
+                            "y": 360
+                        },
+                        "previous_function": "",
+                        "previous_name": "decision_1",
+                        "show_number": true,
+                        "size": {
+                            "height": 82,
+                            "width": 82
+                        },
+                        "state": "decision",
+                        "status": "",
+                        "type": "coa.Decision",
+                        "warn": "",
+                        "z": 1049
+                    },
+                    {
+                        ".scmName/text": "local",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".customFunction": {
+                                "text": "POV_get_current_task"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "local"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def cf_local_POV_get_current_task_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_local_POV_get_current_task_2() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_local_POV_set_event_owner_to_current_2:custom_function_result.data.currentOwner'], action_results=results )\n    container_property_0 = [\n        [\n            container.get(\"id\"),\n        ],\n    ]\n\n    parameters = []\n\n    container_property_0_0 = [item[0] for item in container_property_0]\n    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]\n\n    parameters.append({\n        'container': container_property_0_0,\n        'currentOwner': custom_function_result_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"local/POV_get_current_task\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='local/POV_get_current_task', parameters=parameters, name='cf_local_POV_get_current_task_2', callback=decision_1)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "local/POV_get_current_task",
+                        "cfInputs": {
+                            "container": {
+                                "collectionType": "container_property",
+                                "dataPath": "container:id",
+                                "paramName": "container_property_0_0",
+                                "type": "list"
+                            },
+                            "currentOwner": {
+                                "collectionType": "custom_function_result",
+                                "dataPath": "cf_local_POV_set_event_owner_to_current_2:custom_function_result.data.currentOwner",
+                                "paramName": "custom_function_result_0_0",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "POV_set_event_owner_to_current",
+                        "connection_type": "action",
+                        "container-0": "container:id",
+                        "currentOwner-1": "cf_local_POV_set_event_owner_to_current_2:custom_function_result.data.currentOwner",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 22,
+                        "customFunction": "local/POV_get_current_task",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "1ff4b41e-8a1c-427d-a190-1d5e1f0bb259",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 181,
+                        "line_start": 147,
+                        "message": "Configuring now",
+                        "name": "POV_get_current_task",
+                        "notes": "",
+                        "number": 2,
+                        "order": 8,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -180,
+                            "y": 360
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_local_POV_get_current_task_2",
+                        "selectedCustomFunction": {
+                            "description": "Gets the current task in the phase, and returns the task_id, and current owner of the playbook",
+                            "draftMode": false,
+                            "id": 362,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "POV_get_current_task",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 362,
+                                    "description": "",
+                                    "id": 927,
+                                    "input_type": "list",
+                                    "name": "container",
+                                    "placeholder": "container:id"
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_get_current_task",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 362,
+                                    "description": "",
+                                    "id": 928,
+                                    "input_type": "list",
+                                    "name": "currentOwner",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "name": "POV_get_current_task",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "POV_get_current_task",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 362,
+                                    "data_path": "task_body",
+                                    "description": "",
+                                    "id": 1197
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_get_current_task",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 362,
+                                    "data_path": "task_id",
+                                    "description": "",
+                                    "id": 1198
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_get_current_task",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 362,
+                                    "data_path": "next_playbook",
+                                    "description": "",
+                                    "id": 1199
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_get_current_task",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 362,
+                                    "data_path": "workflow_task_url",
+                                    "description": "",
+                                    "id": 1200
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_get_current_task",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 362,
+                                    "data_path": "status",
+                                    "description": "",
+                                    "id": 1201
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_get_current_task",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 362,
+                                    "data_path": "message",
+                                    "description": "",
+                                    "id": 1202
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_get_current_task",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 362,
+                                    "data_path": "task_name",
+                                    "description": "Name of the Task in the workbook",
+                                    "id": 1203
+                                },
+                                {
+                                    "_pretty_custom_function": "POV_get_current_task",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 362,
+                                    "data_path": "current_playbook_name",
+                                    "description": "This Playbook Executing Now.",
+                                    "id": 1204
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": [
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_Close_Splunk_ES_Notable",
+                                        "draft_mode": false,
+                                        "id": 1029,
+                                        "name": "POV_Close_Splunk_ES_Notable",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_EC2_AWS_Context",
+                                        "draft_mode": false,
+                                        "id": 974,
+                                        "name": "POV_EC2_AWS_Context",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_AddContext_LDAP",
+                                        "draft_mode": false,
+                                        "id": 832,
+                                        "name": "POV_AddContext_LDAP",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_Review_Indicators_Manually",
+                                        "draft_mode": false,
+                                        "id": 833,
+                                        "name": "POV_Review_Indicators_Manually",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_Hunt_Email_Indicators",
+                                        "draft_mode": false,
+                                        "id": 834,
+                                        "name": "POV_Hunt_Email_Indicators",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_Sinkhole_or_Block_External_Indicators",
+                                        "draft_mode": false,
+                                        "id": 873,
+                                        "name": "POV_Sinkhole_or_Block_External_Indicators",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_malicious_insider_containment",
+                                        "draft_mode": false,
+                                        "id": 876,
+                                        "name": "POV_malicious_insider_containment",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_Accept_Event",
+                                        "draft_mode": false,
+                                        "id": 880,
+                                        "name": "POV_Accept_Event",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/Sinkhole or Block external indicators of compromise",
+                                        "draft_mode": false,
+                                        "id": 820,
+                                        "name": "Sinkhole or Block external indicators of compromise",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/Hunt Indicators",
+                                        "draft_mode": false,
+                                        "id": 765,
+                                        "name": "Hunt Indicators",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_Excessive_Failed_Logons",
+                                        "draft_mode": false,
+                                        "id": 1027,
+                                        "name": "POV_Excessive_Failed_Logons",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_EC2_Remote_Probe_Context",
+                                        "draft_mode": false,
+                                        "id": 970,
+                                        "name": "POV_EC2_Remote_Probe_Context",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_EC2_Instance_Isolation",
+                                        "draft_mode": false,
+                                        "id": 998,
+                                        "name": "POV_EC2_Instance_Isolation",
+                                        "viewable": true
+                                    },
+                                    {
+                                        "active": false,
+                                        "display_path": "local/POV_EC2_Instance_Investigation",
+                                        "draft_mode": false,
+                                        "id": 994,
+                                        "name": "POV_EC2_Instance_Investigation",
+                                        "viewable": true
+                                    }
+                                ]
+                            },
+                            "scmId": 2,
+                            "scmName": "local"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...   ",
+                        "warn": false,
+                        "z": 1051
+                    },
+                    {
+                        "action": "update task",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "container_id": "container:id",
+                            "note": "Finished - If you need to rerun this playbook - Revert the task status to 'not started' and re run",
+                            "note_title": "cf_local_POV_get_current_task_2:custom_function_result.data.current_playbook_name",
+                            "phase_name": "",
+                            "role_id": "",
+                            "status": "complete",
+                            "task_id": "cf_local_POV_get_current_task_2:custom_function_result.data.task_id",
+                            "task_name": "",
+                            "user": "cf_local_POV_set_event_owner_to_current_2:custom_function_result.data.currentOwner"
+                        },
+                        "angle": 0,
+                        "app": "Phantom",
+                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "update task",
+                                "actions": [
+                                    "no op",
+                                    "set current phase",
+                                    "update task",
+                                    "modify indicator tag",
+                                    "get indicator",
+                                    "update list",
+                                    "get action result",
+                                    "create container",
+                                    "import container",
+                                    "export container",
+                                    "deflate item",
+                                    "add artifact",
+                                    "find listitem",
+                                    "add listitem",
+                                    "find artifacts",
+                                    "update artifact tags",
+                                    "add note",
+                                    "update artifact",
+                                    "update artifact fields",
+                                    "tabulate data",
+                                    "get user",
+                                    "list playbooks",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom",
+                                "app_version": "2.1.29",
+                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                                "asset_name": "phantomapp",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "container_id": "container:id",
+                                    "note": "Finished - If you need to rerun this playbook - Revert the task status to 'not started' and re run",
+                                    "note_title": "cf_local_POV_get_current_task_2:custom_function_result.data.current_playbook_name",
+                                    "phase_name": "",
+                                    "role_id": "",
+                                    "status": "complete",
+                                    "task_id": "cf_local_POV_get_current_task_2:custom_function_result.data.task_id",
+                                    "task_name": "",
+                                    "user": "cf_local_POV_set_event_owner_to_current_2:custom_function_result.data.currentOwner"
+                                },
+                                "has_app": true,
+                                "id": 26,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantomapp",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.container_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.note",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.note_title",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.phase_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.role_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.task_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.task_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.user",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Message",
+                                        "column_order": 0,
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "container_id": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Container ID (current container if blank)",
+                                        "key": "container_id",
+                                        "order": 0,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "note": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Task note",
+                                        "key": "note",
+                                        "order": 6,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "note_title": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Note title",
+                                        "key": "note_title",
+                                        "order": 7,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "phase_name": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Phase name",
+                                        "key": "phase_name",
+                                        "order": 2,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "role_id": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Task assignee (role)",
+                                        "key": "role_id",
+                                        "order": 5,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "status": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Task status",
+                                        "key": "status",
+                                        "order": 4,
+                                        "primary": false,
+                                        "required": false,
+                                        "value_list": [
+                                            "incomplete",
+                                            "in progress",
+                                            "complete"
+                                        ]
+                                    },
+                                    "task_id": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Task ID",
+                                        "key": "task_id",
+                                        "order": 1,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "task_name": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Task name",
+                                        "key": "task_name",
+                                        "order": 3,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "user": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Task assignee (username or user id)",
+                                        "key": "user",
+                                        "order": 4,
+                                        "primary": true,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "Phantom",
+                                "product_vendor": "Phantom",
+                                "targets": "26",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "updateTaskCompleted"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def updateTaskCompleted(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('updateTaskCompleted() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    id_value = container.get('id', None)\n\n    # collect data for 'updateTaskCompleted' call\n    custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_local_POV_set_event_owner_to_current_2:custom_function_result.data.currentOwner'], action_results=results)\n    custom_function_results_data_2 = phantom.collect2(container=container, datapath=['cf_local_POV_get_current_task_2:custom_function_result.data.task_id', 'cf_local_POV_get_current_task_2:custom_function_result.data.current_playbook_name'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'updateTaskCompleted' call\n    for custom_function_results_item_1 in custom_function_results_data_1:\n        for custom_function_results_item_2 in custom_function_results_data_2:\n            parameters.append({\n                'note': \"Finished - If you need to rerun this playbook - Revert the task status to 'not started' and re run\",\n                'user': custom_function_results_item_1[0],\n                'status': \"complete\",\n                'role_id': \"\",\n                'task_id': custom_function_results_item_2[0],\n                'task_name': \"\",\n                'note_title': custom_function_results_item_2[1],\n                'phase_name': \"\",\n                'container_id': id_value,\n            })\n\n    phantom.act(action=\"update task\", parameters=parameters, assets=['phantomapp'], name=\"updateTaskCompleted\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 201,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "updateTaskInProgress",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "updateTaskCompleted",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "caf6f1d7-e337-4fe5-beac-de65494bf997",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 119,
+                        "line_start": 87,
+                        "message": "Configuring now",
+                        "name": "update task",
+                        "notes": "Set the first task to completed and add a task note.",
+                        "number": 2,
+                        "order": 5,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 620,
+                            "y": 580
+                        },
+                        "previous_function": "",
+                        "previous_name": "updateTaskCompleted",
+                        "required_params": {},
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 1052
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "set status",
+                        "attrs": {
+                            ".api": {
+                                "text": "EventStatusOpen"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            }
+                        },
+                        "block_code": "def EventStatusOpen(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('EventStatusOpen() called')\n\n    phantom.set_status(container=container, status=\"Open\")\n    updateTaskCompleted(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "key": "set-status",
+                                "setStatusStatus": "Open",
+                                "setStatusStatus_display": "Open"
+                            }
+                        ],
+                        "connected_to_start": true,
+                        "connection_name": "updateTaskInProgress",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "EventStatusOpen",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "89089491-2c9e-4fd9-8812-a3e3f024f626",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 55,
+                        "line_start": 47,
+                        "message": "Configuring now",
+                        "name": "set status",
+                        "notes": "Sets the overall events status to \"open\"",
+                        "number": 3,
+                        "order": 3,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 400,
+                            "y": 580
+                        },
+                        "previous_function": "",
+                        "previous_name": "EventStatusOpen",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 1053
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "add comment",
+                        "attrs": {
+                            ".api": {
+                                "text": "add comment"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def add_comment_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_4() called')\n\n    phantom.comment(container=container, comment=\"Unable to get tasks for container. - Please check.\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "addCommentComment": "Unable to get tasks for container. - Please check.",
+                                "key": "add-comment"
+                            }
+                        ],
+                        "connected_to_start": true,
+                        "connection_name": "POV_get_current_task",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "78609fdf-0e25-4baa-8172-8aeabf11ca1c",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 147,
+                        "line_start": 140,
+                        "message": "Configuring now",
+                        "name": "add comment",
+                        "notes": "",
+                        "number": 4,
+                        "order": 7,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 600,
+                            "y": 360
+                        },
+                        "previous_function": "",
+                        "previous_name": "add_comment_4",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 1055
+                    },
+                    {
+                        "action": "update task",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "container_id": "container:id",
+                            "note": "cf_local_POV_get_current_task_2:custom_function_result.data.current_playbook_name",
+                            "note_title": "Task Started",
+                            "phase_name": "",
+                            "role_id": "",
+                            "status": "in progress",
+                            "task_id": "cf_local_POV_get_current_task_2:custom_function_result.data.task_id",
+                            "task_name": "",
+                            "user": "cf_local_POV_set_event_owner_to_current_2:custom_function_result.data.currentOwner"
+                        },
+                        "angle": 0,
+                        "app": "Phantom",
+                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "update task",
+                                "actions": [
+                                    "no op",
+                                    "set current phase",
+                                    "update task",
+                                    "modify indicator tag",
+                                    "get indicator",
+                                    "update list",
+                                    "get action result",
+                                    "create container",
+                                    "import container",
+                                    "export container",
+                                    "deflate item",
+                                    "add artifact",
+                                    "find listitem",
+                                    "add listitem",
+                                    "find artifacts",
+                                    "update artifact tags",
+                                    "add note",
+                                    "update artifact",
+                                    "update artifact fields",
+                                    "tabulate data",
+                                    "get user",
+                                    "list playbooks",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom",
+                                "app_version": "2.1.29",
+                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                                "asset_name": "phantomapp",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "container_id": "container:id",
+                                    "note": "cf_local_POV_get_current_task_2:custom_function_result.data.current_playbook_name",
+                                    "note_title": "Task Started",
+                                    "phase_name": "",
+                                    "role_id": "",
+                                    "status": "in progress",
+                                    "task_id": "cf_local_POV_get_current_task_2:custom_function_result.data.task_id",
+                                    "task_name": "",
+                                    "user": "cf_local_POV_set_event_owner_to_current_2:custom_function_result.data.currentOwner"
+                                },
+                                "has_app": true,
+                                "id": 26,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantomapp",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.container_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.note",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.note_title",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.phase_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.role_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.task_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.task_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.user",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Message",
+                                        "column_order": 0,
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "container_id": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Container ID (current container if blank)",
+                                        "key": "container_id",
+                                        "order": 0,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "note": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Task note",
+                                        "key": "note",
+                                        "order": 6,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "note_title": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Note title",
+                                        "key": "note_title",
+                                        "order": 7,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "phase_name": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Phase name",
+                                        "key": "phase_name",
+                                        "order": 2,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "role_id": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Task assignee (role)",
+                                        "key": "role_id",
+                                        "order": 5,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "status": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Task status",
+                                        "key": "status",
+                                        "order": 4,
+                                        "primary": false,
+                                        "required": false,
+                                        "value_list": [
+                                            "incomplete",
+                                            "in progress",
+                                            "complete"
+                                        ]
+                                    },
+                                    "task_id": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Task ID",
+                                        "key": "task_id",
+                                        "order": 1,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "task_name": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Task name",
+                                        "key": "task_name",
+                                        "order": 3,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "user": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Task assignee (username or user id)",
+                                        "key": "user",
+                                        "order": 4,
+                                        "primary": true,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "Phantom",
+                                "product_vendor": "Phantom",
+                                "targets": "26",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "updateTaskInProgress"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def updateTaskInProgress(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('updateTaskInProgress() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    id_value = container.get('id', None)\n\n    # collect data for 'updateTaskInProgress' call\n    custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_local_POV_get_current_task_2:custom_function_result.data.current_playbook_name', 'cf_local_POV_get_current_task_2:custom_function_result.data.task_id'], action_results=results)\n    custom_function_results_data_2 = phantom.collect2(container=container, datapath=['cf_local_POV_set_event_owner_to_current_2:custom_function_result.data.currentOwner'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'updateTaskInProgress' call\n    for custom_function_results_item_1 in custom_function_results_data_1:\n        for custom_function_results_item_2 in custom_function_results_data_2:\n            parameters.append({\n                'note': custom_function_results_item_1[0],\n                'user': custom_function_results_item_2[0],\n                'status': \"in progress\",\n                'role_id': \"\",\n                'task_id': custom_function_results_item_1[1],\n                'task_name': \"\",\n                'note_title': \"Task Started\",\n                'phase_name': \"\",\n                'container_id': id_value,\n            })\n\n    phantom.act(action=\"update task\", parameters=parameters, assets=['phantomapp'], callback=EventStatusOpen, name=\"updateTaskInProgress\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "POV_get_current_task",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "updateTaskInProgress",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "4c7af9bd-231a-4c69-8fb3-c5edb1ce2a50",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 87,
+                        "line_start": 55,
+                        "message": "Configuring now",
+                        "name": "update task",
+                        "notes": "Updates the first task in the first phase to 'in progress, with an owner that matches the current user running the playbook.",
+                        "number": 1,
+                        "order": 4,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 180,
+                            "y": 580
+                        },
+                        "previous_function": "",
+                        "previous_name": "updateTaskInProgress",
+                        "required_params": {},
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 1056
+                    }
+                ]
+            },
+            "notes": "INPUT: Container with Investigation workbook tasks\nINTERACTIONS: Phantom REST API\nACTIONS: get_data, post_data, set status, set owner, get tasks, get phase\nARTIFACTS:\nP1: get playbook owner, assign them to the container, update task to in processing, then complete the task and execute the next tasks playbook\nP2: report an error in playbook execution or missing information"
+        },
+        "python_version": "3",
+        "schema": 4,
+        "version": "4.10.3.51237"
+    },
+    "create_time": "2021-07-27T11:32:39.816628+00:00",
+    "draft_mode": false,
+    "labels": [
+        "*"
+    ],
+    "tags": []
+}
