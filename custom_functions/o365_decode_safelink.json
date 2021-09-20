@@ -1,0 +1,28 @@
+{
+    "create_time": "2021-09-20T19:39:21.655435+00:00",
+    "custom_function_id": "e2eb63fe5a1beaadfb052f23f7ced85cd976fa12",
+    "description": "This function takes safelinks URLs and decodes them in order to be usable downstream in playbooks .",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "url"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "input_url",
+            "placeholder": "http://myurl.com"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "url"
+            ],
+            "data_path": "*.decoded_url",
+            "description": ""
+        }
+    ],
+    "platform_version": "5.0.0.63789",
+    "python_version": "3"
+}
