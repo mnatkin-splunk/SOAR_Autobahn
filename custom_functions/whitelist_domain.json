@@ -1,0 +1,28 @@
+{
+    "create_time": "2021-09-28T20:19:12.796735+00:00",
+    "custom_function_id": "bb3961084dbd89af2adf906a331fa13f5e4c4d78",
+    "description": "This function takes a list of strings (i.e. \"https://www.splunk.com\") and filters out any domains contained in a whitelist (i.e. \"splunk.com\"). It outputs a list of items that were not matched by the whitelist. Note that the whitelist is maintained in the function itself. Edit this function to change the whitelist.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "Select a field that has domains or urls that will be compared to a whitelist.",
+            "input_type": "list",
+            "name": "input",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "*.whitelisted_result",
+            "description": "Output of domains or urls that were not in the whitelist."
+        }
+    ],
+    "platform_version": "5.0.0.63789",
+    "python_version": "3"
+}

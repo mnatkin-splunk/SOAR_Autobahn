@@ -1,0 +1,668 @@
+{
+    "blockly": false,
+    "blockly_xml": "<xml></xml>",
+    "category": "Uncategorized",
+    "coa": {
+        "data": {
+            "description": "",
+            "edges": [
+                {
+                    "id": "port_0_to_port_2",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "2",
+                    "targetPort": "2_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_2_to_port_3",
+                    "sourceNode": "2",
+                    "sourcePort": "2_out",
+                    "targetNode": "3",
+                    "targetPort": "3_in"
+                },
+                {
+                    "id": "port_3_to_port_5",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "5",
+                    "targetPort": "5_in"
+                },
+                {
+                    "id": "port_5_to_port_8",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
+                    "targetNode": "8",
+                    "targetPort": "8_in"
+                },
+                {
+                    "id": "port_5_to_port_9",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
+                    "targetNode": "9",
+                    "targetPort": "9_in"
+                },
+                {
+                    "id": "port_8_to_port_11",
+                    "sourceNode": "8",
+                    "sourcePort": "8_out",
+                    "targetNode": "11",
+                    "targetPort": "11_in"
+                },
+                {
+                    "id": "port_9_to_port_11",
+                    "sourceNode": "9",
+                    "sourcePort": "9_out",
+                    "targetNode": "11",
+                    "targetPort": "11_in"
+                },
+                {
+                    "id": "port_5_to_port_18",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
+                    "targetNode": "18",
+                    "targetPort": "18_in"
+                },
+                {
+                    "id": "port_18_to_port_11",
+                    "sourceNode": "18",
+                    "sourcePort": "18_out",
+                    "targetNode": "11",
+                    "targetPort": "11_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_11_to_port_13",
+                    "sourceNode": "11",
+                    "sourcePort": "11_out",
+                    "targetNode": "13",
+                    "targetPort": "13_in"
+                },
+                {
+                    "id": "port_21_to_port_1",
+                    "sourceNode": "21",
+                    "sourcePort": "21_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
+                },
+                {
+                    "id": "port_13_to_port_22",
+                    "sourceNode": "13",
+                    "sourcePort": "13_out",
+                    "targetNode": "22",
+                    "targetPort": "22_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 1
+                        }
+                    ],
+                    "id": "port_22_to_port_23",
+                    "sourceNode": "22",
+                    "sourcePort": "22_out",
+                    "targetNode": "23",
+                    "targetPort": "23_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_22_to_port_21",
+                    "sourceNode": "22",
+                    "sourcePort": "22_out",
+                    "targetNode": "21",
+                    "targetPort": "21_in"
+                },
+                {
+                    "id": "port_23_to_port_1",
+                    "sourceNode": "23",
+                    "sourcePort": "23_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
+                }
+            ],
+            "nodes": {
+                "0": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionName": "on_start",
+                        "id": "0",
+                        "type": "start"
+                    },
+                    "errors": {},
+                    "id": "0",
+                    "type": "start",
+                    "x": 360,
+                    "y": -3.197442310920451e-14
+                },
+                "1": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "on_finish",
+                        "id": "1",
+                        "type": "end"
+                    },
+                    "errors": {},
+                    "id": "1",
+                    "type": "end",
+                    "userCode": "\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n",
+                    "x": 360,
+                    "y": 1460
+                },
+                "11": {
+                    "data": {
+                        "advanced": {
+                            "customName": "malicious_decision",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": ">=",
+                                        "param": "vt_detonate_url:action_result.data.*.attributes.total_votes.malicious",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": "==",
+                                        "param": "urlscan_detonate_url:action_result.data.*.verdicts.overall.malicious",
+                                        "value": "True"
+                                    },
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": ">=",
+                                        "param": "threatgrid_detonate_url:action_result.data.*.threat.score",
+                                        "value": "50"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "customName": "is_malicious",
+                                "display": "If",
+                                "logic": "or",
+                                "type": "if"
+                            }
+                        ],
+                        "functionId": 1,
+                        "functionName": "malicious_decision",
+                        "id": "11",
+                        "type": "decision"
+                    },
+                    "errors": {},
+                    "id": "11",
+                    "type": "decision",
+                    "x": 420,
+                    "y": 772
+                },
+                "13": {
+                    "data": {
+                        "advanced": {
+                            "customName": "prompt_analyst",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "approver": "",
+                        "functionId": 1,
+                        "functionName": "prompt_analyst",
+                        "id": "13",
+                        "message": "Splunk SOAR initial phishing investigation results for event name {0}.\n\nURLs Scanned: {1}\nVirustotal Total Malicious Votes: {2}\nURLScan Malicious Verdict: {3}\nThreat Grid Score: {4}\n",
+                        "parameters": [
+                            "container:name",
+                            "whitelist_domain:custom_function_result.data.*.whitelisted_result",
+                            "vt_detonate_url:action_result.data.*.attributes.total_votes.malicious",
+                            "urlscan_detonate_url:action_result.data.*.verdicts.overall.malicious",
+                            "threatgrid_detonate_url:action_result.data.*.threat.score"
+                        ],
+                        "responseTime": 1440,
+                        "responses": [
+                            {
+                                "responseOptions": [
+                                    "Yes",
+                                    "No"
+                                ],
+                                "responsePrompt": "Change event to open status? Responding no will close the event.",
+                                "responseType": "yes/no"
+                            }
+                        ],
+                        "type": "prompt"
+                    },
+                    "errors": {},
+                    "id": "13",
+                    "type": "prompt",
+                    "x": 420,
+                    "y": 952
+                },
+                "18": {
+                    "data": {
+                        "action": "detonate url",
+                        "actionType": "generic",
+                        "advanced": {
+                            "customName": "threatgrid_detonate_url",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "connector": "Threat Grid",
+                        "connectorConfigs": [
+                            "threat grid"
+                        ],
+                        "connectorId": 84,
+                        "connectorVersion": "v1",
+                        "functionId": 3,
+                        "functionName": "threatgrid_detonate_url",
+                        "id": "18",
+                        "parameters": {
+                            "url": "whitelist_domain:custom_function_result.data.*.whitelisted_result"
+                        },
+                        "requiredParameters": [
+                            "url"
+                        ],
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "18",
+                    "type": "action",
+                    "x": 680,
+                    "y": 624
+                },
+                "2": {
+                    "data": {
+                        "advanced": {
+                            "customName": "url_filter",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": "==",
+                                        "param": "artifact:*.name",
+                                        "value": "URL Artifact"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "customName": "is_urlartifact",
+                                "logic": "and"
+                            }
+                        ],
+                        "functionId": 1,
+                        "functionName": "url_filter",
+                        "id": "2",
+                        "type": "filter"
+                    },
+                    "errors": {},
+                    "id": "2",
+                    "type": "filter",
+                    "x": 400,
+                    "y": 148
+                },
+                "21": {
+                    "data": {
+                        "advanced": {
+                            "customName": "set_status_open",
+                            "customNameId": 0,
+                            "join": [],
+                            "refreshNotableData": true
+                        },
+                        "functionId": 6,
+                        "functionName": "set_status_open",
+                        "id": "21",
+                        "selectMore": false,
+                        "tab": "apis",
+                        "type": "utility",
+                        "utilities": {
+                            "set_status": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "choices": "notableStatus",
+                                        "description": "",
+                                        "label": "status",
+                                        "name": "status",
+                                        "placeholder": "Select status",
+                                        "renderType": "dropdown",
+                                        "required": true
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "container",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "trace",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "set status",
+                                "name": "set_status",
+                                "refreshNotableData": true
+                            }
+                        },
+                        "utilityType": "api",
+                        "values": {
+                            "set_status": {
+                                "_internal": [
+                                    "container",
+                                    "trace"
+                                ],
+                                "status": "open"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "21",
+                    "type": "utility",
+                    "x": 170,
+                    "y": 1312
+                },
+                "22": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": "==",
+                                        "param": "prompt_analyst:action_result.summary.responses.0",
+                                        "value": "Yes"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "customName": "open_event",
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            },
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 1,
+                                        "op": "==",
+                                        "param": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "conditionIndex": 1,
+                                "customName": "close_event",
+                                "display": "Else",
+                                "logic": "and",
+                                "type": "else"
+                            }
+                        ],
+                        "functionId": 3,
+                        "functionName": "decision_3",
+                        "id": "22",
+                        "type": "decision"
+                    },
+                    "errors": {},
+                    "id": "22",
+                    "type": "decision",
+                    "x": 420,
+                    "y": 1132
+                },
+                "23": {
+                    "data": {
+                        "advanced": {
+                            "customName": "set_status_closed",
+                            "customNameId": 0,
+                            "join": [],
+                            "refreshNotableData": true
+                        },
+                        "functionId": 7,
+                        "functionName": "set_status_closed",
+                        "id": "23",
+                        "selectMore": false,
+                        "tab": "apis",
+                        "type": "utility",
+                        "utilities": {
+                            "set_status": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "choices": "notableStatus",
+                                        "description": "",
+                                        "label": "status",
+                                        "name": "status",
+                                        "placeholder": "Select status",
+                                        "renderType": "dropdown",
+                                        "required": true
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "container",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "trace",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "set status",
+                                "name": "set_status",
+                                "refreshNotableData": true
+                            }
+                        },
+                        "utilityType": "api",
+                        "values": {
+                            "set_status": {
+                                "_internal": [
+                                    "container",
+                                    "trace"
+                                ],
+                                "status": "closed"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "23",
+                    "type": "utility",
+                    "x": 510,
+                    "y": 1312
+                },
+                "3": {
+                    "data": {
+                        "advanced": {
+                            "customName": "o365_decode_safelink",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "o365_decode_safelink",
+                            "repoName": "local"
+                        },
+                        "functionId": 1,
+                        "functionName": "o365_decode_safelink",
+                        "id": "3",
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "o365_decode_safelink": {
+                                "description": "This function takes safelinks URLs and decodes them in order to be usable downstream in playbooks .",
+                                "fields": [
+                                    {
+                                        "dataTypes": [
+                                            "url"
+                                        ],
+                                        "description": "",
+                                        "inputType": "list",
+                                        "label": "input_url",
+                                        "name": "input_url",
+                                        "placeholder": "http://myurl.com",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "o365_decode_safelink",
+                                "name": "o365_decode_safelink"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "o365_decode_safelink": {
+                                "input_url": "filtered-data:url_filter:condition_1:artifact:*.cef.requestURL"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "3",
+                    "type": "utility",
+                    "x": 340,
+                    "y": 328
+                },
+                "5": {
+                    "data": {
+                        "advanced": {
+                            "customName": "whitelist_domain",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "whitelist_domain",
+                            "repoName": "local"
+                        },
+                        "functionId": 2,
+                        "functionName": "whitelist_domain",
+                        "id": "5",
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "whitelist_domain": {
+                                "description": "This function takes a list of strings (i.e. \"https://www.splunk.com\") and filters out any domains contained in a whitelist (i.e. \"splunk.com\"). It outputs a list of items that were not matched by the whitelist. Note that the whitelist is maintained in the function itself. Edit this function to change the whitelist.",
+                                "fields": [
+                                    {
+                                        "dataTypes": [
+                                            "*"
+                                        ],
+                                        "description": "Select a field that has domains or urls that will be compared to a whitelist.",
+                                        "inputType": "list",
+                                        "label": "input",
+                                        "name": "input",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "whitelist_domain",
+                                "name": "whitelist_domain"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "whitelist_domain": {
+                                "input": "o365_decode_safelink:custom_function_result.data.*.decoded_url"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "5",
+                    "type": "utility",
+                    "x": 340,
+                    "y": 476
+                },
+                "8": {
+                    "data": {
+                        "action": "detonate url",
+                        "actionType": "investigate",
+                        "advanced": {
+                            "customName": "vt_detonate_url",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "connector": "VirusTotal v3",
+                        "connectorConfigs": [
+                            "virustotal"
+                        ],
+                        "connectorId": 112,
+                        "connectorVersion": "v1",
+                        "functionId": 2,
+                        "functionName": "vt_detonate_url",
+                        "id": "8",
+                        "parameters": {
+                            "url": "whitelist_domain:custom_function_result.data.*.whitelisted_result"
+                        },
+                        "requiredParameters": [
+                            "url"
+                        ],
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "8",
+                    "type": "action",
+                    "x": 0,
+                    "y": 624
+                },
+                "9": {
+                    "data": {
+                        "action": "detonate url",
+                        "actionType": "investigate",
+                        "advanced": {
+                            "customName": "urlscan_detonate_url",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "connector": "urlscan.io",
+                        "connectorConfigs": [
+                            "urlscan.io"
+                        ],
+                        "connectorId": 90,
+                        "connectorVersion": "v1",
+                        "functionId": 1,
+                        "functionName": "urlscan_detonate_url",
+                        "id": "9",
+                        "parameters": {
+                            "url": "whitelist_domain:custom_function_result.data.*.whitelisted_result"
+                        },
+                        "requiredParameters": [
+                            "url"
+                        ],
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "9",
+                    "type": "action",
+                    "x": 340,
+                    "y": 624
+                }
+            },
+            "notes": ""
+        },
+        "input_spec": null,
+        "output_spec": null,
+        "playbook_type": "automation",
+        "python_version": "3",
+        "schema": "5.0.3",
+        "version": "5.0.0.63789"
+    },
+    "create_time": "2021-09-23T21:09:51.136216+00:00",
+    "draft_mode": false,
+    "labels": [
+        "phishing"
+    ],
+    "tags": []
+}
