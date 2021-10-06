@@ -141,7 +141,7 @@ def container_phase_url(action=None, success=None, container=None, results=None,
         "container:id",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="container_phase_url")
+    phantom.format(container=container, template=template, parameters=parameters, name="container_phase_url", separator=", ")
 
     get_response_phase_data(container=container)
 
@@ -162,7 +162,7 @@ def get_response_phase_data(action=None, success=None, container=None, results=N
         'verify_certificate': False,
     })
 
-    phantom.act(action="get data", parameters=parameters, assets=['phantom_rest_api'], callback=check_for_phases, name="get_response_phase_data")
+    phantom.act(action="get data", parameters=parameters, assets=['soar http'], callback=check_for_phases, name="get_response_phase_data")
 
     return
 
@@ -242,7 +242,7 @@ def get_phase_data(action=None, success=None, container=None, results=None, hand
     # calculate start time using delay of 0.1 minutes
     start_time = datetime.now() + timedelta(minutes=0.1)
 
-    phantom.act(action="get data", parameters=parameters, assets=['phantom_rest_api'], callback=check_phase, start_time=start_time, name="get_phase_data")
+    phantom.act(action="get data", parameters=parameters, assets=['soar http'], callback=check_phase, start_time=start_time, name="get_phase_data")
 
     return
 
@@ -286,18 +286,10 @@ def add_network_tag(action=None, success=None, container=None, results=None, han
 def assign_workbook(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('assign_workbook() called')
     
-    container_property_0 = [
-        [
-            container.get("id"),
-        ],
-    ]
-
     parameters = []
 
-    container_property_0_0 = [item[0] for item in container_property_0]
-
     parameters.append({
-        'container_id': container_property_0_0,
+        'container_id': None,
     })
     ################################################################################
     ## Custom Code Start
@@ -309,8 +301,8 @@ def assign_workbook(action=None, success=None, container=None, results=None, han
     ## Custom Code End
     ################################################################################    
 
-    # call custom function "enrichment/assign_workbook", returns the custom_function_run_id
-    phantom.custom_function(custom_function='enrichment/assign_workbook', parameters=parameters, name='assign_workbook', callback=get_phase_data)
+    # call custom function "SOAR_Autobahn/assign_workbook", returns the custom_function_run_id
+    phantom.custom_function(custom_function='SOAR_Autobahn/assign_workbook', parameters=parameters, name='assign_workbook', callback=get_phase_data)
 
     return
 

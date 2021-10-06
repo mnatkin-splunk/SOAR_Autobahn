@@ -7,6 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "This is the parent indicator processing playbook. It assigns the appropriate workbook and calls the user, computer, filehash, ip, domain and url enrichment playbooks depending on if the indicators are present.",
+            "hash": "4a8a2378eb9afd95b28d696dfee1430284af2d4d",
             "joint": {
                 "cells": [
                     {
@@ -216,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 330,
-                        "line_start": 317,
+                        "line_end": 322,
+                        "line_start": 309,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -1004,371 +1005,6 @@
                         "z": 389
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "api": "set status, set owner, add comment",
-                        "attrs": {
-                            ".api": {
-                                "text": "missing event informatio...."
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
-                            }
-                        },
-                        "block_code": "def missing_event_information(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('missing_event_information() called')\n\n    phantom.set_status(container=container, status=\"Open\")\n\n    phantom.set_owner(container=container, role=\"Administrator\")\n\n    phantom.comment(container=container, comment=\"Failed to find appropriate IOCs.  Please review the Debug Logs for ingestion errors.\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [
-                            {
-                                "key": "set-status",
-                                "setStatusStatus": "Open"
-                            },
-                            {
-                                "key": "set-owner",
-                                "setOwnerOwner": "Administrator",
-                                "setOwnerOwner_type": "role"
-                            },
-                            {
-                                "addCommentComment": "Failed to find appropriate IOCs.  Please review the Debug Logs for ingestion errors.",
-                                "key": "add-comment"
-                            }
-                        ],
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "missing event information",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "90db1bb7-b508-4441-8724-b00f67ef51e6",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 71,
-                        "line_start": 60,
-                        "message": "Configuring now",
-                        "name": "set status, set owner, add comment",
-                        "notes": "Opens the container and assigns to Administrators, adds a comment that something is wrong with the ingestion and Admin should review the ingestion debug logs.",
-                        "number": 1,
-                        "order": 3,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -400,
-                            "y": 260
-                        },
-                        "previous_function": "",
-                        "previous_name": "missing_event_information",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 397
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".functionBlock": {
-                                "text": "set current phase"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn_grey.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
-                            }
-                        },
-                        "block_code": "def set_current_phase(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('set_current_phase() called')\n    \n    results_data_1 = phantom.collect2(container=container, datapath=['get_phase_data:action_result.data.*.parsed_response_body.data'], action_results=results)\n    results_item_1_0 = [item[0] for item in results_data_1]\n\n    set_current_phase__comment = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    comment = \"Phase is currently set and will not modify.\"\n    \n    # Get current phase from container and if null set to assigned workbook phase order 1\n    cdata = phantom.get_container(container['id'])\n    phantom.debug('Container Current Phase Id: {} '.format(cdata['current_phase']))\n    \n    # Checks if current phase is null if null then assigns 1st phase in the order as current\n    if cdata['current_phase'] is None:\n        # Get phase data and find the 1st phase in the order to assign as current.\n        for phase in results_data_1[0][0]:\n            #phantom.debug(\"The phase: {} and order: {} has been found.\".format(phase['order'],phase['name']))\n            if phase['order'] == 1:\n                # Set current phase from name of phase order 1\n                success, message = phantom.set_phase(phase=phase['name'])\n                phantom.debug('phantom.set_phase results: success: {}, message: {}'.format(success, message))\n    else:\n        phantom.error(comment)\n        success, message = phantom.comment(comment=comment)\n        phantom.debug('phantom.comment results: success: {}, message: {}'.format(success, message))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='set_current_phase:comment', value=json.dumps(set_current_phase__comment))\n    join_indicator_processing(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "get phase data",
-                        "connection_type": "action",
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 11,
-                        "custom_callback": "",
-                        "custom_code": "def set_current_phase(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('set_current_phase() called')\n    results_data_1 = phantom.collect2(container=container, datapath=['get_phase_data:action_result.data.*.parsed_response_body.data'], action_results=results)\n    results_item_1_0 = [item[0] for item in results_data_1]\n\n    set_current_phase__comment = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    comment = \"Phase is currently set and will not modify.\"\n    \n    # Get current phase from container and if null set to assigned workbook phase order 1\n    cdata = phantom.get_container(container['id'])\n    phantom.debug('Container Current Phase Id: {} '.format(cdata['current_phase']))\n    \n    # Checks if current phase is null if null then assigns 1st phase in the order as current\n    if cdata['current_phase'] is None:\n        # Get phase data and find the 1st phase in the order to assign as current.\n        for phase in results_data_1[0][0]:\n            #phantom.debug(\"The phase: {} and order: {} has been found.\".format(phase['order'],phase['name']))\n            if phase['order'] == 1:\n                # Set current phase from name of phase order 1\n                success, message = phantom.set_phase(phase=phase['name'])\n                phantom.debug('phantom.set_phase results: success: {}, message: {}'.format(success, message))\n    else:\n        phantom.error(comment)\n        success, message = phantom.comment(comment=comment)\n        phantom.debug('phantom.comment results: success: {}, message: {}'.format(success, message))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='set_current_phase:comment', value=json.dumps(set_current_phase__comment))\n    join_indicator_filter(container=container)\n\n    return",
-                        "custom_join": "",
-                        "custom_name": "set current phase",
-                        "description": "",
-                        "functionBlock": "custom function",
-                        "has_custom": true,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "43a5d893-6351-4b05-b445-86a4c7a5d3b6",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 221,
-                        "legacy": true,
-                        "line_end": 134,
-                        "line_start": 93,
-                        "message": "Configuring now",
-                        "name": "custom function",
-                        "notes": "From the assigned workbook and sets phase \"Process IoC Requests\" to current phase",
-                        "number": 1,
-                        "order": 5,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "outputVariables": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "comment"
-                            }
-                        ],
-                        "parameters": [
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "get_phase_data:action_result.data.*.parsed_response_body.data"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 760,
-                            "y": -40
-                        },
-                        "previous_function": "",
-                        "previous_name": "set_current_phase",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "custom function",
-                        "status": "deprecating",
-                        "title": "custom function",
-                        "type": "coa.FunctionBlock",
-                        "userGeneratedCode": "\n    comment = \"Phase is currently set and will not modify.\"\n    \n    # Get current phase from container and if null set to assigned workbook phase order 1\n    cdata = phantom.get_container(container['id'])\n    phantom.debug('Container Current Phase Id: {} '.format(cdata['current_phase']))\n    \n    # Checks if current phase is null if null then assigns 1st phase in the order as current\n    if cdata['current_phase'] is None:\n        # Get phase data and find the 1st phase in the order to assign as current.\n        for phase in results_data_1[0][0]:\n            #phantom.debug(\"The phase: {} and order: {} has been found.\".format(phase['order'],phase['name']))\n            if phase['order'] == 1:\n                # Set current phase from name of phase order 1\n                success, message = phantom.set_phase(phase=phase['name'])\n                phantom.debug('phantom.set_phase results: success: {}, message: {}'.format(success, message))\n    else:\n        phantom.error(comment)\n        success, message = phantom.comment(comment=comment)\n        phantom.debug('phantom.comment results: success: {}, message: {}'.format(success, message))\n",
-                        "warn": false,
-                        "z": 437
-                    },
-                    {
                         "attrs": {
                             ".connection": {
                                 "stroke": "#818D99",
@@ -1450,7 +1086,7 @@
                                 "id": 215,
                                 "loaded": false,
                                 "missing": false,
-                                "name": "phantom_rest_api",
+                                "name": "soar http",
                                 "output": [
                                     {
                                         "data_path": "action_result.status",
@@ -1656,7 +1292,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def get_response_phase_data(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_response_phase_data() called')\n\n    # collect data for 'get_response_phase_data' call\n    formatted_data_1 = phantom.get_format_data(name='container_phase_url')\n\n    parameters = []\n    \n    # build parameters list for 'get_response_phase_data' call\n    parameters.append({\n        'headers': \"\",\n        'location': formatted_data_1,\n        'verify_certificate': False,\n    })\n\n    phantom.act(action=\"get data\", parameters=parameters, assets=['phantom_rest_api'], callback=check_for_phases, name=\"get_response_phase_data\")\n\n    return",
+                        "block_code": "def get_response_phase_data(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_response_phase_data() called')\n\n    # collect data for 'get_response_phase_data' call\n    formatted_data_1 = phantom.get_format_data(name='container_phase_url')\n\n    parameters = []\n    \n    # build parameters list for 'get_response_phase_data' call\n    parameters.append({\n        'headers': \"\",\n        'location': formatted_data_1,\n        'verify_certificate': False,\n    })\n\n    phantom.act(action=\"get data\", parameters=parameters, assets=['soar http'], callback=check_for_phases, name=\"get_response_phase_data\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -1765,177 +1401,6 @@
                         "type": "coa.Action",
                         "warn": false,
                         "z": 447
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "api": "add tag",
-                        "attrs": {
-                            ".api": {
-                                "text": "add network tag"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
-                            }
-                        },
-                        "block_code": "def add_network_tag(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_network_tag() called')\n\n    phantom.add_tags(container=container, tags=\"network\")\n    join_set_status_to_processing(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [
-                            {
-                                "addTagTag": "network",
-                                "key": "add-tag"
-                            }
-                        ],
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "add network tag",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "b106970d-bead-40e1-9a7b-c80969662886",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 286,
-                        "line_start": 278,
-                        "message": "Configuring now",
-                        "name": "add tag",
-                        "notes": "Adds network tag for workbook assignment",
-                        "number": 8,
-                        "order": 15,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -360,
-                            "y": 20
-                        },
-                        "previous_function": "",
-                        "previous_name": "add_network_tag",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 449
                     },
                     {
                         "active": false,
@@ -2110,180 +1575,6 @@
                         "type": "coa.API",
                         "warn": false,
                         "z": 452
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "api": "add tag",
-                        "attrs": {
-                            ".api": {
-                                "text": "add host tag"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
-                            }
-                        },
-                        "block_code": "def add_host_tag(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_host_tag() called')\n\n    phantom.add_tags(container=container, tags=\"host\")\n    join_set_status_to_processing(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [
-                            {
-                                "addTagTag": "host",
-                                "key": "add-tag"
-                            }
-                        ],
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "add host tag",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "fd92e665-7e42-4cd3-ae24-f4f9ef400f58",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 278,
-                        "line_start": 270,
-                        "message": "Configuring now",
-                        "name": "add tag",
-                        "notes": "Adds host tag for workbook assignment",
-                        "number": 7,
-                        "order": 14,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -360,
-                            "y": -100
-                        },
-                        "previous_function": "",
-                        "previous_name": "add_host_tag",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 459
                     },
                     {
                         "active": false,
@@ -2537,179 +1828,6 @@
                         "type": "coa.Decision",
                         "warn": "",
                         "z": 460
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".format": {
-                                "text": "container phase url"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
-                            }
-                        },
-                        "block_code": "def container_phase_url(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('container_phase_url() called')\n    \n    template = \"\"\"container/{0}/phases\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"container_phase_url\")\n\n    get_response_phase_data(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "container phase url",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "559ab148-4d08-4203-a9c2-49fb0d825631",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 166,
-                        "line_end": 150,
-                        "line_start": 134,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "creates format for displaying container phases if present",
-                        "number": 2,
-                        "order": 6,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "container:id"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 140,
-                            "y": -180
-                        },
-                        "previous_function": "",
-                        "previous_name": "container_phase_url",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "container/{0}/phases",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 462
                     },
                     {
                         "active": false,
@@ -3080,181 +2198,6 @@
                         "z": 470
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "api": "set status",
-                        "attrs": {
-                            ".api": {
-                                "text": "set status to processing"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
-                            }
-                        },
-                        "block_code": "def set_status_to_processing(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('set_status_to_processing() called')\n\n    phantom.set_status(container=container, status=\"New\")\n    container_phase_url(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [
-                            {
-                                "key": "set-status",
-                                "setStatusStatus": "New",
-                                "setStatusStatus_display": "New"
-                            }
-                        ],
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "set status to processing",
-                        "description": "Customers will need to add this new status to their configuration for use of this action.",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "b0f9a101-8b47-404d-bba9-c00fc08151e5",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "def join_set_status_to_processing(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('join_set_status_to_processing() called')\n\n    # no callbacks to check, call connected block \"set_status_to_processing\"\n    phantom.save_run_data(key='join_set_status_to_processing_called', value='set_status_to_processing', auto=True)\n\n    set_status_to_processing(container=container, handle=handle)\n    \n    return",
-                        "join_optional": [],
-                        "join_start": 260,
-                        "line_end": 270,
-                        "line_start": 252,
-                        "message": "Configuring now",
-                        "name": "set status",
-                        "notes": "Changes container status to \"processing\" to allow analyst only to pick \"new\" containers verses containers that are not ready for them.",
-                        "number": 6,
-                        "order": 13,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -100,
-                            "y": -180
-                        },
-                        "previous_function": "",
-                        "previous_name": "set_status_to_processing",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 473
-                    },
-                    {
                         "attrs": {
                             ".connection": {
                                 "stroke": "#818D99",
@@ -3295,200 +2238,6 @@
                         "z": 475
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#637282",
-                                "transform": "rotate(45 30 70)"
-                            },
-                            ".inPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".number": {
-                                "text": 2
-                            },
-                            ".outPorts>.port-0": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                },
-                                "ref-x": 83,
-                                "ref-y": 40
-                            },
-                            ".outPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".outPorts>.port-1": {
-                                "port": {
-                                    "id": "out-2",
-                                    "type": "out"
-                                },
-                                "ref-x": 41,
-                                "ref-y": 82
-                            },
-                            ".outPorts>.port-1>.port-body": {
-                                "port": {
-                                    "id": "out-2",
-                                    "type": "out"
-                                }
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
-                            }
-                        },
-                        "block_code": "def check_for_phases(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('check_for_phases() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"get_response_phase_data:action_result.data.*.response_body.count\", \"<\", 1],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        assign_workbook(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    existing_phases_comment(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "get response phase data",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "check for phases",
-                        "description": "",
-                        "hasElse": true,
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "1f92574a-9b80-4716-a526-62945460a832",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 210,
-                        "line_end": 190,
-                        "line_start": 169,
-                        "name": "decision",
-                        "notes": "Checks for phases in container\n\nGREEN: if no phases are present, then add the appropriate response workbook\n\nPURPLE: if phases present then add comment no phases will be added at this time and executes indicator enrichment",
-                        "number": 2,
-                        "order": 8,
-                        "outPorts": [
-                            "out-1",
-                            "out-2"
-                        ],
-                        "outputs": [
-                            {
-                                "conditions": [
-                                    {
-                                        "comparison": "<",
-                                        "data_type": "",
-                                        "param": "get_response_phase_data:action_result.data.*.response_body.count",
-                                        "value": "1"
-                                    }
-                                ],
-                                "display": "If",
-                                "logic": "and",
-                                "type": "if"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "comparison": "==",
-                                        "data_type": "",
-                                        "param": "",
-                                        "value": ""
-                                    }
-                                ],
-                                "display": "Else",
-                                "logic": "and",
-                                "type": "else"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 0,
-                            "y": -40
-                        },
-                        "previous_function": "",
-                        "previous_name": "check_for_phases",
-                        "show_number": true,
-                        "size": {
-                            "height": 82,
-                            "width": 82
-                        },
-                        "state": "decision",
-                        "status": "",
-                        "type": "coa.Decision",
-                        "warn": "",
-                        "z": 480
-                    },
-                    {
                         "attrs": {
                             ".connection": {
                                 "stroke": "#818D99",
@@ -3526,244 +2275,6 @@
                         },
                         "type": "link",
                         "z": 481
-                    },
-                    {
-                        ".scmName/text": "enrichment",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {},
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".customFunction": {
-                                "text": "assign workbook"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".scmName": {
-                                "text": "enrichment"
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            ".title-info": {
-                                "text": ""
-                            },
-                            "g.branch image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
-                            }
-                        },
-                        "block_code": "def assign_workbook(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('assign_workbook() called')\n    \n    container_property_0 = [\n        [\n            container.get(\"id\"),\n        ],\n    ]\n\n    parameters = []\n\n    container_property_0_0 = [item[0] for item in container_property_0]\n\n    parameters.append({\n        'container_id': container_property_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"enrichment/assign_workbook\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='enrichment/assign_workbook', parameters=parameters, name='assign_workbook', callback=get_phase_data)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "cfDisplayPath": "enrichment/assign_workbook",
-                        "cfInputs": {
-                            "container_id": {
-                                "collectionType": "container_property",
-                                "dataPath": "container:id",
-                                "paramName": "container_property_0_0",
-                                "type": "list"
-                            }
-                        },
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "get response phase data",
-                        "connection_type": "action",
-                        "container_id-0": "container:id",
-                        "currentVersion": true,
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 19,
-                        "customFunction": "enrichment/assign_workbook",
-                        "customFunctionId": null,
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "assign workbook",
-                        "delay": 0,
-                        "description": "",
-                        "draftMode": false,
-                        "existingCF": true,
-                        "functionBlock": "custom function",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "8c172e90-246b-4aed-a87d-17dd592721e1",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 317,
-                        "line_start": 286,
-                        "message": "Configuring now",
-                        "name": "assign_workbook",
-                        "notes": "Assigns workbook based on tags presented",
-                        "number": 2,
-                        "order": 16,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 140,
-                            "y": -40
-                        },
-                        "previous_function": "",
-                        "previous_name": "assign_workbook",
-                        "selectedCustomFunction": {
-                            "description": "This custom function assigns the workbook based on the container tag presented in order of precedence. ",
-                            "draftMode": false,
-                            "id": 174,
-                            "inputs": [
-                                {
-                                    "_pretty_custom_function": "assign_workbook",
-                                    "contains_type": [
-                                        ""
-                                    ],
-                                    "custom_function": 174,
-                                    "description": "Add the container id to add workbook to.",
-                                    "id": 571,
-                                    "input_type": "list",
-                                    "name": "container_id",
-                                    "placeholder": "container:id"
-                                }
-                            ],
-                            "name": "assign_workbook",
-                            "outputs": [],
-                            "playbooks": {
-                                "draft_playbooks": [],
-                                "draft_version_id": null,
-                                "playbooks": [
-                                    {
-                                        "active": false,
-                                        "display_path": "enrichment/[parent] Event ingest processing",
-                                        "draft_mode": false,
-                                        "id": 4024,
-                                        "name": "[parent] Event ingest processing",
-                                        "viewable": true
-                                    },
-                                    {
-                                        "active": false,
-                                        "display_path": "enrichment/[parent] Event ingest processing_py3",
-                                        "draft_mode": false,
-                                        "id": 4025,
-                                        "name": "[parent] Event ingest processing_py3",
-                                        "viewable": true
-                                    }
-                                ]
-                            },
-                            "scmId": 63,
-                            "scmName": "enrichment"
-                        },
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "repo",
-                        "status": "",
-                        "title": "custom function",
-                        "type": "coa.CustomFunctionBlock",
-                        "userGeneratedCode": "    # Write your custom code here...",
-                        "warn": false,
-                        "z": 483
                     },
                     {
                         "action": "get data",
@@ -3808,7 +2319,7 @@
                                 "id": 215,
                                 "loaded": false,
                                 "missing": false,
-                                "name": "phantom_rest_api",
+                                "name": "soar http",
                                 "output": [
                                     {
                                         "data_path": "action_result.status",
@@ -4014,7 +2525,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def get_phase_data(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_phase_data() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'get_phase_data' call\n    formatted_data_1 = phantom.get_format_data(name='container_phase_url')\n\n    parameters = []\n    \n    # build parameters list for 'get_phase_data' call\n    parameters.append({\n        'headers': \"\",\n        'location': formatted_data_1,\n        'verify_certificate': False,\n    })\n    # calculate start time using delay of 0.1 minutes\n    start_time = datetime.now() + timedelta(minutes=0.1)\n\n    phantom.act(action=\"get data\", parameters=parameters, assets=['phantom_rest_api'], callback=check_phase, start_time=start_time, name=\"get_phase_data\")\n\n    return",
+                        "block_code": "def get_phase_data(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_phase_data() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'get_phase_data' call\n    formatted_data_1 = phantom.get_format_data(name='container_phase_url')\n\n    parameters = []\n    \n    # build parameters list for 'get_phase_data' call\n    parameters.append({\n        'headers': \"\",\n        'location': formatted_data_1,\n        'verify_certificate': False,\n    })\n    # calculate start time using delay of 0.1 minutes\n    start_time = datetime.now() + timedelta(minutes=0.1)\n\n    phantom.act(action=\"get data\", parameters=parameters, assets=['soar http'], callback=check_phase, start_time=start_time, name=\"get_phase_data\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -4304,16 +2815,1493 @@
                         "type": "coa.CallPlaybook",
                         "warn": false,
                         "z": 485
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#637282",
+                                "transform": "rotate(45 30 70)"
+                            },
+                            ".inPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 2
+                            },
+                            ".outPorts>.port-0": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                },
+                                "ref-x": 83,
+                                "ref-y": 40
+                            },
+                            ".outPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".outPorts>.port-1": {
+                                "port": {
+                                    "id": "out-2",
+                                    "type": "out"
+                                },
+                                "ref-x": 41,
+                                "ref-y": 82
+                            },
+                            ".outPorts>.port-1>.port-body": {
+                                "port": {
+                                    "id": "out-2",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            }
+                        },
+                        "block_code": "def check_for_phases(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('check_for_phases() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"get_response_phase_data:action_result.data.*.response_body.count\", \"<\", 1],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        assign_workbook(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    existing_phases_comment(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "get response phase data",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "check for phases",
+                        "description": "",
+                        "hasElse": true,
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "1f92574a-9b80-4716-a526-62945460a832",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 210,
+                        "line_end": 190,
+                        "line_start": 169,
+                        "name": "decision",
+                        "notes": "Checks for phases in container\n\nGREEN: if no phases are present, then add the appropriate response workbook\n\nPURPLE: if phases present then add comment no phases will be added at this time and executes indicator enrichment",
+                        "number": 2,
+                        "order": 8,
+                        "outPorts": [
+                            "out-1",
+                            "out-2"
+                        ],
+                        "outputs": [
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "<",
+                                        "data_type": "",
+                                        "param": "get_response_phase_data:action_result.data.*.response_body.count",
+                                        "value": "1"
+                                    }
+                                ],
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "==",
+                                        "data_type": "",
+                                        "param": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "display": "Else",
+                                "logic": "and",
+                                "type": "else"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 0,
+                            "y": -40
+                        },
+                        "previous_function": "",
+                        "previous_name": "check_for_phases",
+                        "show_number": true,
+                        "size": {
+                            "height": 82,
+                            "width": 82
+                        },
+                        "state": "decision",
+                        "status": "",
+                        "type": "coa.Decision",
+                        "warn": "",
+                        "z": 487
+                    },
+                    {
+                        ".scmName/text": "SOAR_Autobahn",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".customFunction": {
+                                "text": "assign workbook"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "SOAR_Autobahn"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            }
+                        },
+                        "block_code": "def assign_workbook(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('assign_workbook() called')\n    \n    parameters = []\n\n    parameters.append({\n        'container_id': None,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"SOAR_Autobahn/assign_workbook\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='SOAR_Autobahn/assign_workbook', parameters=parameters, name='assign_workbook', callback=get_phase_data)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "SOAR_Autobahn/assign_workbook",
+                        "cfInputs": {
+                            "container_id": {
+                                "dataPath": "",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "get response phase data",
+                        "connection_type": "action",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 11,
+                        "customFunction": "SOAR_Autobahn/assign_workbook",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "assign workbook",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "8c172e90-246b-4aed-a87d-17dd592721e1",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 309,
+                        "line_start": 286,
+                        "message": "Configuring now",
+                        "name": "assign_workbook",
+                        "notes": "Assigns workbook based on tags presented",
+                        "number": 2,
+                        "order": 16,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 140,
+                            "y": -40
+                        },
+                        "previous_function": "",
+                        "previous_name": "assign_workbook",
+                        "selectedCustomFunction": {
+                            "description": "This custom function assigns the workbook based on the container tag presented in order of precedence. ",
+                            "draftMode": false,
+                            "id": 43,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "assign_workbook",
+                                    "contains_type": [
+                                        ""
+                                    ],
+                                    "custom_function": 43,
+                                    "description": "Add the container id to add workbook to.",
+                                    "id": 151,
+                                    "input_type": "list",
+                                    "name": "container_id",
+                                    "placeholder": "container:id"
+                                }
+                            ],
+                            "name": "assign_workbook",
+                            "outputs": [],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": []
+                            },
+                            "scmId": 3,
+                            "scmName": "SOAR_Autobahn"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 488
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".functionBlock": {
+                                "text": "set current phase"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn_grey.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            }
+                        },
+                        "block_code": "def set_current_phase(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('set_current_phase() called')\n    \n    results_data_1 = phantom.collect2(container=container, datapath=['get_phase_data:action_result.data.*.parsed_response_body.data'], action_results=results)\n    results_item_1_0 = [item[0] for item in results_data_1]\n\n    set_current_phase__comment = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    comment = \"Phase is currently set and will not modify.\"\n    \n    # Get current phase from container and if null set to assigned workbook phase order 1\n    cdata = phantom.get_container(container['id'])\n    phantom.debug('Container Current Phase Id: {} '.format(cdata['current_phase']))\n    \n    # Checks if current phase is null if null then assigns 1st phase in the order as current\n    if cdata['current_phase'] is None:\n        # Get phase data and find the 1st phase in the order to assign as current.\n        for phase in results_data_1[0][0]:\n            #phantom.debug(\"The phase: {} and order: {} has been found.\".format(phase['order'],phase['name']))\n            if phase['order'] == 1:\n                # Set current phase from name of phase order 1\n                success, message = phantom.set_phase(phase=phase['name'])\n                phantom.debug('phantom.set_phase results: success: {}, message: {}'.format(success, message))\n    else:\n        phantom.error(comment)\n        success, message = phantom.comment(comment=comment)\n        phantom.debug('phantom.comment results: success: {}, message: {}'.format(success, message))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='set_current_phase:comment', value=json.dumps(set_current_phase__comment))\n    join_indicator_processing(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "get phase data",
+                        "connection_type": "action",
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 11,
+                        "custom_callback": "",
+                        "custom_code": "def set_current_phase(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('set_current_phase() called')\n    results_data_1 = phantom.collect2(container=container, datapath=['get_phase_data:action_result.data.*.parsed_response_body.data'], action_results=results)\n    results_item_1_0 = [item[0] for item in results_data_1]\n\n    set_current_phase__comment = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    comment = \"Phase is currently set and will not modify.\"\n    \n    # Get current phase from container and if null set to assigned workbook phase order 1\n    cdata = phantom.get_container(container['id'])\n    phantom.debug('Container Current Phase Id: {} '.format(cdata['current_phase']))\n    \n    # Checks if current phase is null if null then assigns 1st phase in the order as current\n    if cdata['current_phase'] is None:\n        # Get phase data and find the 1st phase in the order to assign as current.\n        for phase in results_data_1[0][0]:\n            #phantom.debug(\"The phase: {} and order: {} has been found.\".format(phase['order'],phase['name']))\n            if phase['order'] == 1:\n                # Set current phase from name of phase order 1\n                success, message = phantom.set_phase(phase=phase['name'])\n                phantom.debug('phantom.set_phase results: success: {}, message: {}'.format(success, message))\n    else:\n        phantom.error(comment)\n        success, message = phantom.comment(comment=comment)\n        phantom.debug('phantom.comment results: success: {}, message: {}'.format(success, message))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='set_current_phase:comment', value=json.dumps(set_current_phase__comment))\n    join_indicator_filter(container=container)\n\n    return",
+                        "custom_join": "",
+                        "custom_name": "set current phase",
+                        "description": "",
+                        "functionBlock": "custom function",
+                        "has_custom": true,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "43a5d893-6351-4b05-b445-86a4c7a5d3b6",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 221,
+                        "legacy": true,
+                        "line_end": 134,
+                        "line_start": 93,
+                        "message": "Configuring now",
+                        "name": "custom function",
+                        "notes": "From the assigned workbook and sets phase \"Process IoC Requests\" to current phase",
+                        "number": 1,
+                        "order": 5,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "outputVariables": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "comment"
+                            }
+                        ],
+                        "parameters": [
+                            {
+                                "position": 1,
+                                "type": "",
+                                "value": "get_phase_data:action_result.data.*.parsed_response_body.data"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 760,
+                            "y": -40
+                        },
+                        "previous_function": "",
+                        "previous_name": "set_current_phase",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "custom function",
+                        "status": "deprecating",
+                        "title": "custom function",
+                        "type": "coa.FunctionBlock",
+                        "userGeneratedCode": "\n    comment = \"Phase is currently set and will not modify.\"\n    \n    # Get current phase from container and if null set to assigned workbook phase order 1\n    cdata = phantom.get_container(container['id'])\n    phantom.debug('Container Current Phase Id: {} '.format(cdata['current_phase']))\n    \n    # Checks if current phase is null if null then assigns 1st phase in the order as current\n    if cdata['current_phase'] is None:\n        # Get phase data and find the 1st phase in the order to assign as current.\n        for phase in results_data_1[0][0]:\n            #phantom.debug(\"The phase: {} and order: {} has been found.\".format(phase['order'],phase['name']))\n            if phase['order'] == 1:\n                # Set current phase from name of phase order 1\n                success, message = phantom.set_phase(phase=phase['name'])\n                phantom.debug('phantom.set_phase results: success: {}, message: {}'.format(success, message))\n    else:\n        phantom.error(comment)\n        success, message = phantom.comment(comment=comment)\n        phantom.debug('phantom.comment results: success: {}, message: {}'.format(success, message))\n",
+                        "warn": false,
+                        "z": 489
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "set status, set owner, add comment",
+                        "attrs": {
+                            ".api": {
+                                "text": "missing event informatio..."
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            }
+                        },
+                        "block_code": "def missing_event_information(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('missing_event_information() called')\n\n    phantom.set_status(container=container, status=\"Open\")\n\n    phantom.set_owner(container=container, role=\"Administrator\")\n\n    phantom.comment(container=container, comment=\"Failed to find appropriate IOCs.  Please review the Debug Logs for ingestion errors.\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "key": "set-status",
+                                "setStatusStatus": "Open"
+                            },
+                            {
+                                "key": "set-owner",
+                                "setOwnerOwner": "Administrator",
+                                "setOwnerOwner_type": "role"
+                            },
+                            {
+                                "addCommentComment": "Failed to find appropriate IOCs.  Please review the Debug Logs for ingestion errors.",
+                                "key": "add-comment"
+                            }
+                        ],
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "missing event information",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "90db1bb7-b508-4441-8724-b00f67ef51e6",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 71,
+                        "line_start": 60,
+                        "message": "Configuring now",
+                        "name": "set status, set owner, add comment",
+                        "notes": "Opens the container and assigns to Administrators, adds a comment that something is wrong with the ingestion and Admin should review the ingestion debug logs.",
+                        "number": 1,
+                        "order": 3,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -400,
+                            "y": 260
+                        },
+                        "previous_function": "",
+                        "previous_name": "missing_event_information",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 490
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "add tag",
+                        "attrs": {
+                            ".api": {
+                                "text": "add host tag"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            }
+                        },
+                        "block_code": "def add_host_tag(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_host_tag() called')\n\n    phantom.add_tags(container=container, tags=\"host\")\n    join_set_status_to_processing(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "addTagTag": "host",
+                                "key": "add-tag"
+                            }
+                        ],
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "add host tag",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "fd92e665-7e42-4cd3-ae24-f4f9ef400f58",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 278,
+                        "line_start": 270,
+                        "message": "Configuring now",
+                        "name": "add tag",
+                        "notes": "Adds host tag for workbook assignment",
+                        "number": 7,
+                        "order": 14,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -360,
+                            "y": -100
+                        },
+                        "previous_function": "",
+                        "previous_name": "add_host_tag",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 491
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "add tag",
+                        "attrs": {
+                            ".api": {
+                                "text": "add network tag"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            }
+                        },
+                        "block_code": "def add_network_tag(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_network_tag() called')\n\n    phantom.add_tags(container=container, tags=\"network\")\n    join_set_status_to_processing(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "addTagTag": "network",
+                                "key": "add-tag"
+                            }
+                        ],
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "add network tag",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "b106970d-bead-40e1-9a7b-c80969662886",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 286,
+                        "line_start": 278,
+                        "message": "Configuring now",
+                        "name": "add tag",
+                        "notes": "Adds network tag for workbook assignment",
+                        "number": 8,
+                        "order": 15,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -360,
+                            "y": 20
+                        },
+                        "previous_function": "",
+                        "previous_name": "add_network_tag",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 492
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "set status",
+                        "attrs": {
+                            ".api": {
+                                "text": "set status to processing"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            }
+                        },
+                        "block_code": "def set_status_to_processing(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('set_status_to_processing() called')\n\n    phantom.set_status(container=container, status=\"New\")\n    container_phase_url(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "key": "set-status",
+                                "setStatusStatus": "New",
+                                "setStatusStatus_display": "New"
+                            }
+                        ],
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "set status to processing",
+                        "description": "Customers will need to add this new status to their configuration for use of this action.",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "b0f9a101-8b47-404d-bba9-c00fc08151e5",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "def join_set_status_to_processing(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('join_set_status_to_processing() called')\n\n    # no callbacks to check, call connected block \"set_status_to_processing\"\n    phantom.save_run_data(key='join_set_status_to_processing_called', value='set_status_to_processing', auto=True)\n\n    set_status_to_processing(container=container, handle=handle)\n    \n    return",
+                        "join_optional": [],
+                        "join_start": 260,
+                        "line_end": 270,
+                        "line_start": 252,
+                        "message": "Configuring now",
+                        "name": "set status",
+                        "notes": "Changes container status to \"processing\" to allow analyst only to pick \"new\" containers verses containers that are not ready for them.",
+                        "number": 6,
+                        "order": 13,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -100,
+                            "y": -180
+                        },
+                        "previous_function": "",
+                        "previous_name": "set_status_to_processing",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 493
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".format": {
+                                "text": "container phase url"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_note_dark_on.svg"
+                            }
+                        },
+                        "block_code": "def container_phase_url(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('container_phase_url() called')\n    \n    template = \"\"\"container/{0}/phases\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"container_phase_url\", separator=\", \")\n\n    get_response_phase_data(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "container phase url",
+                        "delimiter": ", ",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "559ab148-4d08-4203-a9c2-49fb0d825631",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 166,
+                        "line_end": 150,
+                        "line_start": 134,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "creates format for displaying container phases if present",
+                        "number": 2,
+                        "order": 6,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "container:id"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 140,
+                            "y": -180
+                        },
+                        "previous_function": "",
+                        "previous_name": "container_phase_url",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "container/{0}/phases",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 494
                     }
                 ]
             },
             "notes": "INPUT: Container with any top level ioc (ip, domain, url, hash, user, hostname)\nINTERACTION: Process child playbooks for associated artifacts found\nACTIONS: phantom.playbook, post data\nARTIFACTS:\nP1: If ip or domain or url or filehash is found execute the corresponding indicator automation playbook, adds IOC workbook (if missing) and process indicators\nP2: If no indicators are found, display an error message to fact. Leave the container open.\nP3: No action at this time."
         },
+        "input_spec": null,
+        "output_spec": null,
+        "playbook_type": "automation",
         "python_version": "3",
-        "schema": 4,
-        "version": "4.10.3.51237"
+        "schema": "4",
+        "version": "5.0.0.63789"
     },
-    "create_time": "2021-05-10T02:45:13.274989+00:00",
+    "create_time": "2021-10-06T08:05:41.038023+00:00",
     "draft_mode": false,
     "labels": [
         "*"
