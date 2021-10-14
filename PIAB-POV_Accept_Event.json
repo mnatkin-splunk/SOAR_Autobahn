@@ -7,7 +7,6 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "6c5b2b4272739b253bc18d399cd1e0ee9f765ce5",
             "joint": {
                 "cells": [
                     {
@@ -427,7 +426,7 @@
                                 "opacity": 1
                             },
                             "g.delete": {
-                                "display": "block"
+                                "display": "none"
                             },
                             "g.error": {
                                 "opacity": 0
@@ -1052,6 +1051,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"cf_local_POV_get_current_task_py3_1:custom_function_result.data.status\", \"==\", \"failed\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        add_comment_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    set_status_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
@@ -1269,6 +1271,9 @@
                             ".title": {
                                 "text": "API"
                             },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -1277,6 +1282,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def add_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_1() called')\n\n    phantom.comment(container=container, comment=\"Unable to get tasks for container. - Please check.\")\n\n    container = phantom.get_container(container.get('id', None))\n\n    return",
@@ -1474,6 +1482,9 @@
                             ".title": {
                                 "text": "API"
                             },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -1482,6 +1493,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def set_status_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('set_status_2() called')\n\n    phantom.set_status(container=container, status=\"Open\")\n\n    container = phantom.get_container(container.get('id', None))\n\n    return",
