@@ -1,0 +1,28 @@
+{
+    "create_time": "2021-10-19T18:26:18.338199+00:00",
+    "custom_function_id": "f115c5a00f239658f1a10290b44f3b39330f75b4",
+    "description": "",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "phantom container id"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "id_value",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "splunk notable event id"
+            ],
+            "data_path": "eventLink",
+            "description": ""
+        }
+    ],
+    "platform_version": "5.0.1.66250",
+    "python_version": "3"
+}
